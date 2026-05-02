@@ -1,5 +1,6 @@
 ﻿//using System.CommandLine;
 using System.Text.RegularExpressions;
+using WixGenerator.Generators;
 using WixGenerator.Model;
 using WixGenerator.Model.Extensions;
 using WixGenerator.Model.Items;
@@ -191,16 +192,19 @@ namespace WixGenerator {
                 .AddComponentGroup("BaseComponents", group => {
 
                     var files = Directory.GetFiles(binSource, "*.dll", SearchOption.AllDirectories);
-                    var fileNames = new List<string>();
                     var exclusions = new Regex("Lw");
-                    foreach (var file in files) {
-                        var f = Path.GetRelativePath(binSource, file);
-                        if (!exclusions.IsMatch(f) && !fileNames.Contains(f))
-                            fileNames.Add(f);
-                    }
 
-                    group
-                        .AddFilesComponent(fileNames, binSource, installBinDir);
+                    var fileNames = new List<string>();
+                    foreach (var file in files) {
+                        var name = Path.GetFileName(file);
+                        if (!exclusions.IsMatch(name) && !fileNames.Contains(file)) {
+                            fileNames.Add(file);
+                            var sourceDir = Path.GetDirectoryName(file);
+                            var installDir = Path.GetDirectoryName(Path.Combine(installBinDir, Path.GetRelativePath(binSource, file)));
+                            group.AddFileComponent(name, sourceDir, installDir);
+                        }
+                    }
+                    fileNames.Clear();
                 })
                 .AddComponentGroup("Cleanup", group => {
                     group.AddComponent(component => {

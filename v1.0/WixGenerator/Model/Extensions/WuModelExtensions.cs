@@ -9,36 +9,20 @@
         /// 
         extension(WuProject project) {
 
-            public WuProject AddFeature(string title, string description) {
+            public WuProject AddFeature(string title, string description, Action<WuFeature>? action) {
 
-                var f = new WuFeature(title, description);
-                project.Add(f);
-
-                return project;
-            }
-
-            public WuProject AddFeature(string title, string description, Action<WuFeature> action) {
-
-                var f = new WuFeature(title, description);
-                action(f);
-                project.Add(f);
+                var entity = new WuFeature(title, description);
+                action?.Invoke(entity);
+                project.Add(entity);
 
                 return project;
             }
 
-            public WuProject AddComponentGroup(string name) {
+            public WuProject AddComponentGroup(string name, Action<WuComponentGroup>? action = null) {
 
-                var g = new WuComponentGroup(name);
-                project.Add(g);
-
-                return project;
-            }
-
-            public WuProject AddComponentGroup(string name, Action<WuComponentGroup> action) {
-
-                var g = new WuComponentGroup(name);
-                action(g);
-                project.Add(g);
+                var entity = new WuComponentGroup(name);
+                action?.Invoke(entity);
+                project.Add(entity);
 
                 return project;
             }
@@ -51,19 +35,11 @@
         /// 
         extension(WuFeature feature) {
 
-            public WuFeature AddFeature(string title, string description) {
+            public WuFeature AddFeature(string title, string description, Action<WuFeature>? action = null) {
 
-                var f = new WuFeature(title, description);
-                feature.Add(f);
-
-                return feature;
-            }
-
-            public WuFeature AddFeature(string title, string description, Action<WuFeature> action) {
-
-                var f = new WuFeature(title, description);
-                action(f);
-                feature.Add(f);
+                var entity = new WuFeature(title, description);
+                action?.Invoke(entity);
+                feature.Add(entity);
 
                 return feature;
             }
@@ -78,43 +54,27 @@
 
             public WuComponentGroup AddComponent(Action<WuComponent> action) {
 
-                var c = new WuComponent();
-                group.Add(c);
-                action(c);
-
-                return group;
-
-            }
-
-            public WuComponentGroup AddFileComponent(string name, string sourceDir, string targetDir) {
-
-                var c = new WuFileComponent(name, sourceDir, targetDir);
-                group.Add(c);
+                var entity = new WuComponent();
+                group.Add(entity);
+                action(entity);
 
                 return group;
             }
 
-            public WuComponentGroup AddFilesComponent(IEnumerable<String> names, string sourceDir, string targetDir) {
+            public WuComponentGroup AddFileComponent(string name, string sourceDir, string installDir, Action<WuFileComponent>? action = null) {
 
-                foreach (var name in names)
-                    group.AddFileComponent(name, sourceDir, targetDir);
-
-                return group;
-            }
-
-            public WuComponentGroup AddExecutableFileComponent(string name, string sourceDir, string targetDir) {
-
-                var c = new WuExecutableFileComponent(name, sourceDir, targetDir);
-                group.Add(c);
+                var entity = new WuFileComponent(name, sourceDir, installDir);
+                action?.Invoke(entity);
+                group.Add(entity);
 
                 return group;
             }
 
-            public WuComponentGroup AddExecutableFileComponent(string name, string sourceDir, string targetDir, Action<WuExecutableFileComponent> action) {
+            public WuComponentGroup AddExecutableFileComponent(string name, string sourceDir, string installDir, Action<WuExecutableFileComponent>? action = null) {
 
-                var c = new WuExecutableFileComponent(name, sourceDir, targetDir);
-                action(c);
-                group.Add(c);
+                var entity = new WuExecutableFileComponent(name, sourceDir, installDir);
+                action?.Invoke(entity);
+                group.Add(entity);
 
                 return group;
             }

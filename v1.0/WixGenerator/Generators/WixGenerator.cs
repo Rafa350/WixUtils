@@ -1,5 +1,7 @@
-﻿using System.Globalization;
+﻿using System.ComponentModel;
+using System.Globalization;
 using System.Xml;
+using System.Xml.Linq;
 using WixGenerator.Model;
 using WixGenerator.Model.Items;
 
@@ -415,14 +417,15 @@ namespace WixGenerator.Generators {
         }
 
         /// <summary>
-        /// Explora tots els element a la recerca de directoris. Despres genera les trentrades
-        /// per crear els directoris trobats.
+        /// Explora tots els element a la recerca de directoris. Despres genera les entrades
+        /// corresponents a cada directory i subdirectori.
         /// </summary>
         /// 
         private sealed class GenerateDirectoriesVisitor: WuVisitor {
 
             private readonly XmlWriter _writer;
             private readonly List<string> _directories = new List<string>();
+            private readonly DirectoryTreeBuilder _directoryTreeBuilder = new DirectoryTreeBuilder();
 
             public GenerateDirectoriesVisitor(XmlWriter writer) {
 
@@ -431,6 +434,28 @@ namespace WixGenerator.Generators {
 
             public override void Visit(WuProject project) {
 
+                void ProcessDirectoryNode(DirectoryNode node, string path) {
+
+                    var name = node.Name;
+
+                    if (name.StartsWith('[') && name.EndsWith(']')) {
+                        path = name;
+                        _writer.WriteStartElement("StandardDirectory");
+                        _writer.WriteAttributeString("Id", name.Substring(1, name.Length - 2));
+                    }
+                    else {
+                        path = String.Concat(path, "\\", name);
+                        _writer.WriteStartElement("Directory");
+                        _writer.WriteAttributeString("Id", String.Format("directory_{0:X8}", path.GetHashCode()));
+                        _writer.WriteAttributeString("Name", name);
+                    }
+
+                    foreach (var subdirectory in node.Subdirectories)
+                        ProcessDirectoryNode(subdirectory, path);
+
+                    _writer.WriteEndElement();
+                }
+
                 // Construeix la llista de directoris del projecte
                 //
                 foreach (var group in project.Entities)
@@ -438,35 +463,20 @@ namespace WixGenerator.Generators {
 
                 // Genera les entrades  corresponents
                 //
-                foreach (var directory in _directories) {
-
-                    var dirNames = directory.Split('\\');
-
-                    foreach (var dirName in dirNames) {
-                        if (dirName.StartsWith('[') && dirName.EndsWith(']')) {
-                            _writer.WriteStartElement("StandardDirectory");
-                            _writer.WriteAttributeString("Id", dirName.Substring(1, dirName.Length - 2));
-                        }
-                        else {
-                            _writer.WriteStartElement("Directory");
-                            _writer.WriteAttributeString("Id", $"directory_{Math.Abs(HashCode.Combine(directory, dirName))}");
-                            _writer.WriteAttributeString("Name", dirName);
-                        }
-                    }
-                    foreach (var dirName in dirNames) {
-                        _writer.WriteEndElement();
-                    }
-                }
+                foreach (var subdirectory in _directoryTreeBuilder.Root.Subdirectories)
+                    ProcessDirectoryNode(subdirectory, String.Empty);
             }
 
             public override void Visit(WuDirectory directory) {
 
                 AddDirectory(directory.Name);
+                _directoryTreeBuilder.Append(directory.Name);
             }
 
             public override void Visit(WuFileComponent component) {
 
                 AddDirectory(component.InstallDir);
+                _directoryTreeBuilder.Append(component.InstallDir);
 
                 base.Visit(component);
             }
@@ -474,6 +484,7 @@ namespace WixGenerator.Generators {
             public override void Visit(WuExecutableFileComponent component) {
 
                 AddDirectory(component.InstallDir);
+                _directoryTreeBuilder.Append(component.InstallDir);
 
                 base.Visit(component);
             }
@@ -481,6 +492,7 @@ namespace WixGenerator.Generators {
             public override void Visit(WuFileShortcut shortcut) {
 
                 AddDirectory(shortcut.InstallDir);
+                _directoryTreeBuilder.Append(shortcut.InstallDir);
             }
 
             private void AddDirectory(string directory) {

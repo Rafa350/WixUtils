@@ -14,441 +14,445 @@
         <WixVariable Id="WixUILicenseRtf" Value="EULA\eula.rtf" />
         <Property Id="WIXUI_INSTALLDIR" Value="INSTALLDIR" />
         <StandardDirectory Id="ProgramFiles64Folder">
-            <Directory Id="directory_1445159973" Name="RSOpenWare">
-                <Directory Id="directory_2133977758" Name="Label Writer Engine Install Test">
-                    <Directory Id="directory_1596485548" Name="v0.0">
-                        <Directory Id="directory_1997091039" Name="bin" />
+            <Directory Id="directory_1F53173F" Name="RSOpenWare">
+                <Directory Id="directory_DB8B8789" Name="Label Writer Engine Install Test">
+                    <Directory Id="directory_99122DD0" Name="v0.0">
+                        <Directory Id="directory_3D52DE56" Name="bin">
+                            <Directory Id="directory_F24A2524" Name="es" />
+                            <Directory Id="directory_7BECD8D0" Name="fr" />
+                            <Directory Id="directory_0542475F" Name="it" />
+                        </Directory>
                     </Directory>
                 </Directory>
             </Directory>
         </StandardDirectory>
         <StandardDirectory Id="ProgramMenuFolder">
-            <Directory Id="directory_1814109901" Name="Label Writer Engine Install Test" />
+            <Directory Id="directory_A658B36B" Name="Label Writer Engine Install Test" />
         </StandardDirectory>
         <StandardDirectory Id="CommonFiles64Folder">
-            <Directory Id="directory_736394418" Name="RSOpenWare">
-                <Directory Id="directory_1937723518" Name="Label Writer Engine Install Test">
-                    <Directory Id="directory_1274262865" Name="v0.0" />
+            <Directory Id="directory_AE98EF62" Name="RSOpenWare">
+                <Directory Id="directory_3A04EF54" Name="Label Writer Engine Install Test">
+                    <Directory Id="directory_670EAB99" Name="v0.0" />
                 </Directory>
             </Directory>
         </StandardDirectory>
-        <Feature Id="feature_02360855" Title="Base" Description="Base" Display="hidden" AllowAbsent="no">
-            <ComponentGroupRef Id="group_00BE6C52" />
+        <Feature Id="feature_00BE6C52" Title="Base" Description="Base" Display="hidden" AllowAbsent="no">
             <ComponentGroupRef Id="group_01AB8032" />
             <ComponentGroupRef Id="group_01B5828E" />
+            <ComponentGroupRef Id="group_0237A13C" />
         </Feature>
-        <Feature Id="feature_0237A13C" Title="Tools" Description="Print and configuration CLI tool." Display="expand">
-            <ComponentGroupRef Id="group_00D33010" />
+        <Feature Id="feature_00D33010" Title="Tools" Description="Print and configuration CLI tool." Display="expand">
+            <ComponentGroupRef Id="group_02B970D1" />
         </Feature>
-        <Feature Id="feature_02B970D1" Title="Services" Description="Print services." Display="expand">
-            <ComponentGroupRef Id="group_036ABA9D" />
+        <Feature Id="feature_036ABA9D" Title="Services" Description="Print services." Display="expand">
+            <ComponentGroupRef Id="group_006B79FE" />
         </Feature>
-        <Feature Id="feature_006B79FE" Title="Data access" Description="Data access drivers." Display="expand">
-            <Feature Id="feature_017531EC" Title="ODBC" Description="ODBC data access driver" Display="expand">
-                <ComponentGroupRef Id="group_02F38902" />
+        <Feature Id="feature_017531EC" Title="Data access" Description="Data access drivers." Display="expand">
+            <Feature Id="feature_02F38902" Title="ODBC" Description="ODBC data access driver" Display="expand">
+                <ComponentGroupRef Id="group_025DF523" />
             </Feature>
-            <Feature Id="feature_025DF523" Title="PostgreSQL" Description="PostgreSQL data access driver" Display="expand">
-                <ComponentGroupRef Id="group_02C572CB" />
+            <Feature Id="feature_02C572CB" Title="PostgreSQL" Description="PostgreSQL data access driver" Display="expand">
+                <ComponentGroupRef Id="group_0006D457" />
             </Feature>
-            <Feature Id="feature_0006D457" Title="SQLite" Description="SQLite data access driver" Display="expand">
-                <ComponentGroupRef Id="group_0058C877" />
+            <Feature Id="feature_0058C877" Title="SQLite" Description="SQLite data access driver" Display="expand">
+                <ComponentGroupRef Id="group_00822E10" />
             </Feature>
-            <Feature Id="feature_00822E10" Title="CSV" Description="CSV data access driver" Display="expand">
-                <ComponentGroupRef Id="group_029C56D3" />
-            </Feature>
-        </Feature>
-        <Feature Id="feature_01F068C2" Title="Printer drivers" Description="Printer machine drivers." Display="expand">
-            <Feature Id="feature_013551DF" Title="Windows" Description="Windows printer driver" Display="expand">
-                <ComponentGroupRef Id="group_03B52854" />
-            </Feature>
-            <Feature Id="feature_00330C47" Title="CAB" Description="CAB printer driver" Display="expand">
-                <ComponentGroupRef Id="group_02979F9B" />
-            </Feature>
-            <Feature Id="feature_01B31AE9" Title="Toshiba-TEC" Description="Toshiba-TEC printer river" Display="expand">
-                <ComponentGroupRef Id="group_02185DDF" />
-            </Feature>
-            <Feature Id="feature_033CC455" Title="Sato" Description="Sato printer driver" Display="expand">
-                <ComponentGroupRef Id="group_0215F854" />
-            </Feature>
-            <Feature Id="feature_031D9C47" Title="Zebra" Description="Zebra printer driver" Display="expand">
-                <ComponentGroupRef Id="group_0080EFA1" />
-            </Feature>
-            <Feature Id="feature_028C2B2E" Title="PDF" Description="PDF printer driver" Display="expand">
-                <ComponentGroupRef Id="group_011E315B" />
-            </Feature>
-            <Feature Id="feature_028881A8" Title="SVG" Description="SVG printer driver" Display="expand">
-                <ComponentGroupRef Id="group_00EE958A" />
+            <Feature Id="feature_029C56D3" Title="CSV" Description="CSV data access driver" Display="expand">
+                <ComponentGroupRef Id="group_01F068C2" />
             </Feature>
         </Feature>
-        <Feature Id="feature_001D9802" Title="Test and debug tools" Description="Test and debug tools." Display="expand">
-            <ComponentGroupRef Id="group_0180B822" />
+        <Feature Id="feature_013551DF" Title="Printer drivers" Description="Printer machine drivers." Display="expand">
+            <Feature Id="feature_03B52854" Title="Windows" Description="Windows printer driver" Display="expand">
+                <ComponentGroupRef Id="group_00330C47" />
+            </Feature>
+            <Feature Id="feature_02979F9B" Title="CAB" Description="CAB printer driver" Display="expand">
+                <ComponentGroupRef Id="group_01B31AE9" />
+            </Feature>
+            <Feature Id="feature_02185DDF" Title="Toshiba-TEC" Description="Toshiba-TEC printer river" Display="expand">
+                <ComponentGroupRef Id="group_033CC455" />
+            </Feature>
+            <Feature Id="feature_0215F854" Title="Sato" Description="Sato printer driver" Display="expand">
+                <ComponentGroupRef Id="group_031D9C47" />
+            </Feature>
+            <Feature Id="feature_0080EFA1" Title="Zebra" Description="Zebra printer driver" Display="expand">
+                <ComponentGroupRef Id="group_028C2B2E" />
+            </Feature>
+            <Feature Id="feature_011E315B" Title="PDF" Description="PDF printer driver" Display="expand">
+                <ComponentGroupRef Id="group_028881A8" />
+            </Feature>
+            <Feature Id="feature_00EE958A" Title="SVG" Description="SVG printer driver" Display="expand">
+                <ComponentGroupRef Id="group_001D9802" />
+            </Feature>
         </Feature>
-        <ComponentGroup Id="group_00D33010">
-            <Component Id="component_038959BB" Guid="06632962-798e-4bcc-aae6-9631117eb277" Directory="directory_1997091039">
-                <File Id="file_038959BB" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\LwEngineTool.exe" KeyPath="yes" />
+        <Feature Id="feature_0180B822" Title="Test and debug tools" Description="Test and debug tools." Display="expand">
+            <ComponentGroupRef Id="group_038959BB" />
+        </Feature>
+        <ComponentGroup Id="group_02B970D1">
+            <Component Id="component_01F98E89" Guid="ed698494-789a-42e8-98bf-f9175b32c16f" Directory="directory_1265916340">
+                <File Id="file_01F98E89" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\LwEngineTool.exe" KeyPath="yes" />
             </Component>
-            <Component Id="component_01F98E89" Guid="98482ed2-66f5-4ba5-aa67-e62a3b28aeb9">
-                <Shortcut Id="shortcut_01AC3D01" Directory="directory_1814109901" Name="LwEngineTool" Description="LwEngine CLI management tool" Target="[ProgramFiles64Folder]\RSOpenWare\Label Writer Engine Install Test\v0.0\bin\LwEngineTool.exe" />
+            <Component Id="component_01AC3D01" Guid="86b56094-6a08-4f9e-b356-8a1e0fb2a94e">
+                <Shortcut Id="shortcut_01BF1917" Directory="directory_2069842067" Name="LwEngineTool" Description="LwEngine CLI management tool" Target="[ProgramFiles64Folder]\RSOpenWare\Label Writer Engine Install Test\v0.0\bin\LwEngineTool.exe" />
                 <RegistryValue Root="HKCU" Key="[ProgramFiles64Folder]\RSOpenWare\Label Writer Engine Install Test\v0.0\bin\LwEngineTool.exe" Name="shortcut" Type="integer" Value="1" KeyPath="yes" />
             </Component>
-            <Component Id="component_01BF1917" Guid="8b35205c-cf92-400c-8c64-39a2bcf7b383" Directory="directory_1997091039">
-                <File Id="file_01BF1917" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\LwEngineTool.dll" KeyPath="yes" />
+            <Component Id="component_02B44632" Guid="c0865e1d-8585-4149-9d1d-473fcba5294b" Directory="directory_1265916340">
+                <File Id="file_02B44632" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\LwEngineTool.dll" KeyPath="yes" />
             </Component>
         </ComponentGroup>
-        <ComponentGroup Id="group_036ABA9D">
-            <Component Id="component_02B44632" Guid="38962a12-3bc7-44fc-a635-b2aa010db407" Directory="directory_1997091039">
-                <File Id="file_02B44632" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\LwEngineServices.exe" KeyPath="yes" />
+        <ComponentGroup Id="group_006B79FE">
+            <Component Id="component_03279090" Guid="c5003cf0-2018-4abb-acd1-82b91483615d" Directory="directory_1265916340">
+                <File Id="file_03279090" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\LwEngineServices.exe" KeyPath="yes" />
                 <ServiceInstall Name="LwEngineServices" Type="ownProcess" DisplayName="LwEngineServices" Description="LwEngine print services." Start="auto" ErrorControl="normal" />
                 <ServiceControl Name="LwEngineServices" Start="install" Stop="uninstall" Remove="uninstall" Wait="yes" />
             </Component>
-            <Component Id="component_03279090" Guid="9651f5f9-2fad-4f21-9712-60e4a54473c4" Directory="directory_1997091039">
-                <File Id="file_03279090" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\LwEngineServices.dll" KeyPath="yes" />
-            </Component>
-        </ComponentGroup>
-        <ComponentGroup Id="group_01AB8032">
-            <Component Id="component_0102575C" Guid="214ceb6f-96e8-498f-a4b7-80f159316d8d" Directory="directory_1997091039">
-                <File Id="file_0102575C" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\LwEngine.Barcode.dll" KeyPath="yes" />
-            </Component>
-            <Component Id="component_011E6FAC" Guid="78408e74-f9e9-4bfe-a4da-4d46e45e0bd1" Directory="directory_1997091039">
-                <File Id="file_011E6FAC" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\LwEngine.Batch.dll" KeyPath="yes" />
-            </Component>
-            <Component Id="component_028BABBC" Guid="fb31d729-7a23-4817-a9b4-352511018260" Directory="directory_1997091039">
-                <File Id="file_028BABBC" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\LwEngine.Common.dll" KeyPath="yes" />
-            </Component>
-            <Component Id="component_0117B88E" Guid="7e4f216d-bf24-487a-8918-15588c72acab" Directory="directory_1997091039">
-                <File Id="file_0117B88E" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\LwEngine.Core.dll" KeyPath="yes" />
-            </Component>
-            <Component Id="component_02345F41" Guid="ea89b311-5144-41e2-b5c2-b0cdc85d2eef" Directory="directory_1997091039">
-                <File Id="file_02345F41" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\LwEngine.Data.dll" KeyPath="yes" />
-            </Component>
-            <Component Id="component_00A8D64F" Guid="6e4b6dc9-3a06-4c56-8fbe-a8bac88f5cb6" Directory="directory_1997091039">
-                <File Id="file_00A8D64F" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\LwEngine.Print.dll" KeyPath="yes" />
-            </Component>
-            <Component Id="component_0092E208" Guid="c266a64e-fa6e-4e65-a88b-2bb466a4c132" Directory="directory_1997091039">
-                <File Id="file_0092E208" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\LwEngine.Render.dll" KeyPath="yes" />
-            </Component>
-            <Component Id="component_03757A73" Guid="3b3fe665-8981-470a-8dc4-47883bd5db29" Directory="directory_1997091039">
-                <File Id="file_03757A73" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\LwEngine.Render.Skia.dll" KeyPath="yes" />
-            </Component>
-            <Component Id="component_00F737E1" Guid="05e0803d-85b4-4ef0-b478-2270cdc84204" Directory="directory_1274262865">
-                <File Id="file_00F737E1" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\DefaultCfg\LwEngine.config.xml" KeyPath="yes" />
-            </Component>
-            <Component Id="component_008DD671" Guid="f25fa661-5eb6-46ec-86b5-541600cdd6c9" Directory="directory_1274262865">
-                <File Id="file_008DD671" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\DefaultCfg\LwEngine.windows.config.xml" KeyPath="yes" />
-            </Component>
-            <Component Id="component_0333E3C8" Guid="aa121cd6-b8e2-425b-ab58-27a1075b9b56" Directory="directory_1274262865">
-                <File Id="file_0333E3C8" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\DefaultCfg\LwEngine.printers.xml" KeyPath="yes" />
-            </Component>
-        </ComponentGroup>
-        <ComponentGroup Id="group_02979F9B">
-            <Component Id="component_01A2912F" Guid="671016c5-0c53-4eda-9e3c-b720bb7b052e" Directory="directory_1997091039">
-                <File Id="file_01A2912F" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\LwEngine.Driver.CAB.dll" KeyPath="yes" />
-            </Component>
-            <Component Id="component_01415F6C" Guid="2431e130-1ac7-457b-aadb-73f9b83627de" Directory="directory_1997091039">
-                <File Id="file_01415F6C" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\LwEngine.Driver.CAB.devices.xml" KeyPath="yes" />
-            </Component>
-        </ComponentGroup>
-        <ComponentGroup Id="group_02185DDF">
-            <Component Id="component_0051D883" Guid="78963a01-f742-479b-8a2f-a60594a68a3a" Directory="directory_1997091039">
-                <File Id="file_0051D883" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\LwEngine.Driver.TEC.dll" KeyPath="yes" />
-            </Component>
-            <Component Id="component_0027FEAB" Guid="5d35bf88-db5d-4386-8bc1-fbe90f1a7d2a" Directory="directory_1997091039">
-                <File Id="file_0027FEAB" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\LwEngine.Driver.TEC.devices.xml" KeyPath="yes" />
-            </Component>
-        </ComponentGroup>
-        <ComponentGroup Id="group_011E315B">
-            <Component Id="component_0207EEB2" Guid="359e2338-fa99-4e30-8d15-e55a48504a0f" Directory="directory_1997091039">
-                <File Id="file_0207EEB2" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\LwEngine.Driver.PDF.dll" KeyPath="yes" />
-            </Component>
-        </ComponentGroup>
-        <ComponentGroup Id="group_00EE958A">
-            <Component Id="component_02671F12" Guid="e3e5a0ec-5dc3-441f-bec9-f6d54c794b51" Directory="directory_1997091039">
-                <File Id="file_02671F12" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\LwEngine.Driver.SVG.dll" KeyPath="yes" />
-            </Component>
-        </ComponentGroup>
-        <ComponentGroup Id="group_03B52854">
-            <Component Id="component_033C93F3" Guid="ae204e5c-52e2-4a1e-b120-dbc066e8f012" Directory="directory_1997091039">
-                <File Id="file_033C93F3" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\LwEngine.Driver.Windows.dll" KeyPath="yes" />
-            </Component>
-        </ComponentGroup>
-        <ComponentGroup Id="group_0215F854">
-            <Component Id="component_02138360" Guid="00875574-d5ae-42c9-b72e-f0e185492601" Directory="directory_1997091039">
-                <File Id="file_02138360" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\LwEngine.Driver.Sato.dll" KeyPath="yes" />
-            </Component>
-        </ComponentGroup>
-        <ComponentGroup Id="group_0080EFA1">
-            <Component Id="component_02FDABEC" Guid="4a6bd53b-870f-40fc-bd89-6ac827357d4b" Directory="directory_1997091039">
-                <File Id="file_02FDABEC" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\LwEngine.Driver.Zebra.dll" KeyPath="yes" />
-            </Component>
-        </ComponentGroup>
-        <ComponentGroup Id="group_02F38902">
-            <Component Id="component_02E1BB03" Guid="ca613d73-4387-483e-ac08-6f5247a8376e" Directory="directory_1997091039">
-                <File Id="file_02E1BB03" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\LwEngine.Data.ODBC.dll" KeyPath="yes" />
-            </Component>
-        </ComponentGroup>
-        <ComponentGroup Id="group_02C572CB">
-            <Component Id="component_01767F33" Guid="c22e45b8-73f3-49de-9517-f84862aefd28" Directory="directory_1997091039">
-                <File Id="file_01767F33" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\LwEngine.Data.PostgreSQL.dll" KeyPath="yes" />
-            </Component>
-        </ComponentGroup>
-        <ComponentGroup Id="group_0058C877">
-            <Component Id="component_03047599" Guid="8b1f5a12-dccc-43f8-a42e-cb1189eb120e" Directory="directory_1997091039">
-                <File Id="file_03047599" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\LwEngine.Data.SQLite.dll" KeyPath="yes" />
-            </Component>
-        </ComponentGroup>
-        <ComponentGroup Id="group_029C56D3">
-            <Component Id="component_0339F8CD" Guid="abf8f9a1-affb-44c9-8779-b2e5e6695f7b" Directory="directory_1997091039">
-                <File Id="file_0339F8CD" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\LwEngine.Data.CSV.dll" KeyPath="yes" />
-            </Component>
-        </ComponentGroup>
-        <ComponentGroup Id="group_0180B822">
-            <Component Id="component_01F1A270" Guid="9ae224c1-164b-4223-866b-08cde9c7a678" Directory="directory_1997091039">
-                <File Id="file_01F1A270" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\LwFakeNetPrinter.exe" KeyPath="yes" />
-            </Component>
-            <Component Id="component_01453FB1" Guid="4a735b02-336e-407b-831e-5f001c3cc630">
-                <Shortcut Id="shortcut_00843C05" Directory="directory_1814109901" Name="LwFakeNetPrinter" Description="Net printer emulator." Target="[ProgramFiles64Folder]\RSOpenWare\Label Writer Engine Install Test\v0.0\bin\LwFakeNetPrinter.exe" />
-                <RegistryValue Root="HKCU" Key="[ProgramFiles64Folder]\RSOpenWare\Label Writer Engine Install Test\v0.0\bin\LwNetFakePrinter.exe" Name="shortcut" Type="integer" Value="1" KeyPath="yes" />
-            </Component>
-            <Component Id="component_02B70C45" Guid="e933d3bc-9430-414d-b091-e3c063d4b215" Directory="directory_1997091039">
-                <File Id="file_02B70C45" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\LwFakeNetPrinter.dll" KeyPath="yes" />
-            </Component>
-        </ComponentGroup>
-        <ComponentGroup Id="group_00BE6C52">
-            <Component Id="component_034B9F87" Guid="82240bdc-030e-4475-9746-519130b07cd0" Directory="directory_1997091039">
-                <File Id="file_034B9F87" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\DeviceId.dll" KeyPath="yes" />
-            </Component>
-            <Component Id="component_02D719DF" Guid="b1979b0b-befe-4dd2-8213-fe52b064fb9f" Directory="directory_1997091039">
-                <File Id="file_02D719DF" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\DeviceId.Linux.dll" KeyPath="yes" />
-            </Component>
-            <Component Id="component_00EC5054" Guid="5fb679db-7ff2-442b-a718-b44c211e02bb" Directory="directory_1997091039">
-                <File Id="file_00EC5054" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\DeviceId.Mac.dll" KeyPath="yes" />
-            </Component>
-            <Component Id="component_00001444" Guid="d93d5fe0-f39c-4d0d-b6bd-3a367e37afa3" Directory="directory_1997091039">
-                <File Id="file_00001444" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\DeviceId.Windows.dll" KeyPath="yes" />
-            </Component>
-            <Component Id="component_00010779" Guid="ccea6052-f92d-4f64-aea6-9063a3fe7f90" Directory="directory_1997091039">
-                <File Id="file_00010779" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\DeviceId.Windows.Wmi.dll" KeyPath="yes" />
-            </Component>
-            <Component Id="component_000D612B" Guid="9269a411-2cda-4645-9f82-7e2a8c70c476" Directory="directory_1997091039">
-                <File Id="file_000D612B" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\e_sqlite3.dll" KeyPath="yes" />
-            </Component>
-            <Component Id="component_00ADEF35" Guid="6bf0b821-0494-4324-9f0b-5ab9c0249725" Directory="directory_1997091039">
-                <File Id="file_00ADEF35" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\Google.Protobuf.dll" KeyPath="yes" />
-            </Component>
-            <Component Id="component_00D525BA" Guid="2b438082-ed9e-4e8a-8e12-7a8a552e7342" Directory="directory_1997091039">
-                <File Id="file_00D525BA" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\Grpc.Core.Api.dll" KeyPath="yes" />
-            </Component>
-            <Component Id="component_02D2EA76" Guid="8b1a3ec8-bd2c-4e9f-9464-6be25f97d8c2" Directory="directory_1997091039">
-                <File Id="file_02D2EA76" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\Grpc.Net.Client.dll" KeyPath="yes" />
-            </Component>
-            <Component Id="component_00B5E806" Guid="dd3fc5c3-526f-4809-9fb9-26576779a431" Directory="directory_1997091039">
-                <File Id="file_00B5E806" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\Grpc.Net.Common.dll" KeyPath="yes" />
-            </Component>
-            <Component Id="component_013CC85A" Guid="940af32c-90bf-4c30-8863-50a32ea55295" Directory="directory_1997091039">
-                <File Id="file_013CC85A" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\Karambolo.Extensions.Logging.File.dll" KeyPath="yes" />
-            </Component>
-            <Component Id="component_00162C97" Guid="222f870b-30a6-42a9-8886-a1e851969f8d" Directory="directory_1997091039">
-                <File Id="file_00162C97" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\libSkiaSharp.dll" KeyPath="yes" />
-            </Component>
-            <Component Id="component_012043AE" Guid="0d5a3d0e-86c5-4580-b586-281f327030af" Directory="directory_1997091039">
-                <File Id="file_012043AE" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\LMS3.Client.dll" KeyPath="yes" />
-            </Component>
-            <Component Id="component_02A36FE1" Guid="af2d44f6-b17a-4076-a739-345cc2a45a47" Directory="directory_1997091039">
-                <File Id="file_02A36FE1" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\LMS3.MachineId.dll" KeyPath="yes" />
-            </Component>
-            <Component Id="component_024CAE72" Guid="3e4f6030-ef8a-47c9-8ed0-0485ee1007ec" Directory="directory_1997091039">
-                <File Id="file_024CAE72" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\Microsoft.CodeAnalysis.CSharp.dll" KeyPath="yes" />
-            </Component>
-            <Component Id="component_01E4DBCB" Guid="f9d59296-b19a-4419-9ec9-8343e032bfa2" Directory="directory_1997091039">
-                <File Id="file_01E4DBCB" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\Microsoft.CodeAnalysis.dll" KeyPath="yes" />
-            </Component>
-            <Component Id="component_009F2952" Guid="2d2bfbff-6e44-448b-8c70-3069c52ad21b" Directory="directory_1997091039">
-                <File Id="file_009F2952" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\Microsoft.Data.Sqlite.dll" KeyPath="yes" />
-            </Component>
-            <Component Id="component_0015192A" Guid="1ffbccb8-66d8-4af9-9b50-ca9d2c1ef683" Directory="directory_1997091039">
-                <File Id="file_0015192A" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\Microsoft.Extensions.Configuration.Abstractions.dll" KeyPath="yes" />
-            </Component>
-            <Component Id="component_0112472C" Guid="e57f1bec-14ac-449b-a0e4-d4153bb9c125" Directory="directory_1997091039">
-                <File Id="file_0112472C" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\Microsoft.Extensions.Configuration.Binder.dll" KeyPath="yes" />
-            </Component>
-            <Component Id="component_01ED9D46" Guid="a8686d47-d822-41ba-a537-a00fedfe2771" Directory="directory_1997091039">
-                <File Id="file_01ED9D46" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\Microsoft.Extensions.Configuration.CommandLine.dll" KeyPath="yes" />
-            </Component>
-            <Component Id="component_0110FC90" Guid="243dabb2-bc17-4484-9a06-f05ad618cb1b" Directory="directory_1997091039">
-                <File Id="file_0110FC90" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\Microsoft.Extensions.Configuration.dll" KeyPath="yes" />
-            </Component>
-            <Component Id="component_01DCD353" Guid="cc038017-8d48-49c5-aeb6-b0b2037b5cdd" Directory="directory_1997091039">
-                <File Id="file_01DCD353" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\Microsoft.Extensions.Configuration.EnvironmentVariables.dll" KeyPath="yes" />
-            </Component>
-            <Component Id="component_0036BB3A" Guid="e9e8d3fc-319d-4bbe-add2-5ce5cd69208b" Directory="directory_1997091039">
-                <File Id="file_0036BB3A" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\Microsoft.Extensions.Configuration.FileExtensions.dll" KeyPath="yes" />
-            </Component>
-            <Component Id="component_02C781F8" Guid="9340bc68-7aaa-4e87-af2c-147abf2f3cea" Directory="directory_1997091039">
-                <File Id="file_02C781F8" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\Microsoft.Extensions.Configuration.Json.dll" KeyPath="yes" />
-            </Component>
-            <Component Id="component_00219999" Guid="28a6dfb5-5581-4469-955b-8102f9c2151b" Directory="directory_1997091039">
-                <File Id="file_00219999" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\Microsoft.Extensions.Configuration.UserSecrets.dll" KeyPath="yes" />
-            </Component>
-            <Component Id="component_01B4CCCA" Guid="3b6e2e20-0837-4177-9fd9-a1cba8e86964" Directory="directory_1997091039">
-                <File Id="file_01B4CCCA" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\Microsoft.Extensions.Configuration.Xml.dll" KeyPath="yes" />
-            </Component>
-            <Component Id="component_022E664B" Guid="8c62935e-bebe-4ac5-92e9-f1928fa52914" Directory="directory_1997091039">
-                <File Id="file_022E664B" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\Microsoft.Extensions.DependencyInjection.Abstractions.dll" KeyPath="yes" />
-            </Component>
-            <Component Id="component_005B31D1" Guid="f0b5894f-c952-40b3-bb9b-86d56d9bb5e4" Directory="directory_1997091039">
-                <File Id="file_005B31D1" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\Microsoft.Extensions.DependencyInjection.dll" KeyPath="yes" />
-            </Component>
-            <Component Id="component_00A1879D" Guid="38d435b7-9573-46a6-8205-ee46d6637afc" Directory="directory_1997091039">
-                <File Id="file_00A1879D" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\Microsoft.Extensions.Diagnostics.Abstractions.dll" KeyPath="yes" />
-            </Component>
-            <Component Id="component_0033E301" Guid="67bcd87d-6fda-494d-bf5b-d129be8ab9eb" Directory="directory_1997091039">
-                <File Id="file_0033E301" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\Microsoft.Extensions.Diagnostics.dll" KeyPath="yes" />
-            </Component>
-            <Component Id="component_02A2870E" Guid="25a9747e-4aaf-4ab3-a398-d5eb1b7d3d79" Directory="directory_1997091039">
-                <File Id="file_02A2870E" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\Microsoft.Extensions.FileProviders.Abstractions.dll" KeyPath="yes" />
-            </Component>
-            <Component Id="component_0240DBC0" Guid="7a8d8c4b-f800-495d-ba78-afbf0a668d2e" Directory="directory_1997091039">
-                <File Id="file_0240DBC0" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\Microsoft.Extensions.FileProviders.Physical.dll" KeyPath="yes" />
-            </Component>
-            <Component Id="component_014B28CC" Guid="1532c4ef-33ef-419e-a126-14d95916a798" Directory="directory_1997091039">
-                <File Id="file_014B28CC" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\Microsoft.Extensions.FileSystemGlobbing.dll" KeyPath="yes" />
-            </Component>
-            <Component Id="component_00D11266" Guid="090ae73c-0139-41df-a179-868b647ff030" Directory="directory_1997091039">
-                <File Id="file_00D11266" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\Microsoft.Extensions.Hosting.Abstractions.dll" KeyPath="yes" />
-            </Component>
-            <Component Id="component_029DEF35" Guid="9e4b4b66-2ec5-4e59-9812-6de7feacb90f" Directory="directory_1997091039">
-                <File Id="file_029DEF35" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\Microsoft.Extensions.Hosting.dll" KeyPath="yes" />
-            </Component>
-            <Component Id="component_020525B7" Guid="eec66ce7-e986-46f3-af77-36702742a8e4" Directory="directory_1997091039">
-                <File Id="file_020525B7" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\Microsoft.Extensions.Hosting.Systemd.dll" KeyPath="yes" />
-            </Component>
-            <Component Id="component_0242EA57" Guid="3ebb4dcb-4103-4605-b97f-23dca97dbd6b" Directory="directory_1997091039">
-                <File Id="file_0242EA57" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\Microsoft.Extensions.Hosting.WindowsServices.dll" KeyPath="yes" />
-            </Component>
-            <Component Id="component_0165E66B" Guid="7bf8c1af-62d6-4cb3-be41-9ad3a41ad9f9" Directory="directory_1997091039">
-                <File Id="file_0165E66B" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\Microsoft.Extensions.Logging.Abstractions.dll" KeyPath="yes" />
-            </Component>
-            <Component Id="component_022CB36F" Guid="cf90901b-e578-41ef-94cd-5b16f37bf8b0" Directory="directory_1997091039">
-                <File Id="file_022CB36F" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\Microsoft.Extensions.Logging.Configuration.dll" KeyPath="yes" />
-            </Component>
-            <Component Id="component_00451CA5" Guid="9f10c1c8-3cca-476c-baac-723d5ca41628" Directory="directory_1997091039">
-                <File Id="file_00451CA5" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\Microsoft.Extensions.Logging.Console.dll" KeyPath="yes" />
-            </Component>
-            <Component Id="component_0382746C" Guid="9ddf1a1c-c45e-40e7-9988-89b36642fbcd" Directory="directory_1997091039">
-                <File Id="file_0382746C" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\Microsoft.Extensions.Logging.Debug.dll" KeyPath="yes" />
-            </Component>
-            <Component Id="component_019FE97E" Guid="cf49d77c-2975-4a70-a195-2256530764fd" Directory="directory_1997091039">
-                <File Id="file_019FE97E" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\Microsoft.Extensions.Logging.dll" KeyPath="yes" />
-            </Component>
-            <Component Id="component_011EDB6B" Guid="82b48c4f-ccf4-4f55-90f3-68ca3d9a033b" Directory="directory_1997091039">
-                <File Id="file_011EDB6B" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\Microsoft.Extensions.Logging.EventLog.dll" KeyPath="yes" />
-            </Component>
-            <Component Id="component_0291247A" Guid="7ce6210f-993a-4501-b9a3-78181e694829" Directory="directory_1997091039">
-                <File Id="file_0291247A" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\Microsoft.Extensions.Logging.EventSource.dll" KeyPath="yes" />
-            </Component>
-            <Component Id="component_015EDA3C" Guid="35d58ce0-9409-4cfe-8cdf-352e9832aea5" Directory="directory_1997091039">
-                <File Id="file_015EDA3C" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\Microsoft.Extensions.Options.ConfigurationExtensions.dll" KeyPath="yes" />
-            </Component>
-            <Component Id="component_01D11510" Guid="7b50c9b0-e0b8-45ea-9b85-5d4caa1bb942" Directory="directory_1997091039">
-                <File Id="file_01D11510" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\Microsoft.Extensions.Options.DataAnnotations.dll" KeyPath="yes" />
-            </Component>
-            <Component Id="component_039E11DB" Guid="cb7afdc5-1bd7-4e29-a430-4cc019d7d1bd" Directory="directory_1997091039">
-                <File Id="file_039E11DB" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\Microsoft.Extensions.Options.dll" KeyPath="yes" />
-            </Component>
-            <Component Id="component_0306E826" Guid="23674635-2935-4995-8ab6-dc6c583f7490" Directory="directory_1997091039">
-                <File Id="file_0306E826" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\Microsoft.Extensions.Primitives.dll" KeyPath="yes" />
-            </Component>
-            <Component Id="component_0359C9F7" Guid="2e6da544-43ba-4f17-b0c7-b47de789e6ff" Directory="directory_1997091039">
-                <File Id="file_0359C9F7" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\Microsoft.Win32.SystemEvents.dll" KeyPath="yes" />
-            </Component>
-            <Component Id="component_038F4192" Guid="7acd1b54-02be-4971-a411-eddacff70db3" Directory="directory_1997091039">
-                <File Id="file_038F4192" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\NetSerializer.dll" KeyPath="yes" />
-            </Component>
-            <Component Id="component_0246546E" Guid="5dd1add2-6fb2-4cbc-9460-79d6b62d83af" Directory="directory_1997091039">
-                <File Id="file_0246546E" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\Npgsql.dll" KeyPath="yes" />
-            </Component>
-            <Component Id="component_01924999" Guid="0308596e-c1f7-4dbb-983d-23e7b00b6959" Directory="directory_1997091039">
-                <File Id="file_01924999" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\QRCoder.dll" KeyPath="yes" />
-            </Component>
-            <Component Id="component_006DBCCD" Guid="15dcedd2-05c1-4c0b-b23f-c461c71015aa" Directory="directory_1997091039">
-                <File Id="file_006DBCCD" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\SkiaSharp.dll" KeyPath="yes" />
-            </Component>
-            <Component Id="component_01929672" Guid="3f0bf5c8-1df4-45e3-930a-f017161b651e" Directory="directory_1997091039">
-                <File Id="file_01929672" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\SQLitePCLRaw.batteries_v2.dll" KeyPath="yes" />
-            </Component>
-            <Component Id="component_0071A3D3" Guid="7124ce4b-5984-4463-8ba7-47b6259b0f1f" Directory="directory_1997091039">
-                <File Id="file_0071A3D3" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\SQLitePCLRaw.core.dll" KeyPath="yes" />
-            </Component>
-            <Component Id="component_01C551C3" Guid="0dcd4ba5-89df-405f-a5e0-032c0da1ef1e" Directory="directory_1997091039">
-                <File Id="file_01C551C3" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\SQLitePCLRaw.provider.e_sqlite3.dll" KeyPath="yes" />
-            </Component>
-            <Component Id="component_030526EE" Guid="d85fb072-ca41-4620-8fc8-d267a3271818" Directory="directory_1997091039">
-                <File Id="file_030526EE" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\System.CodeDom.dll" KeyPath="yes" />
-            </Component>
-            <Component Id="component_0342FA22" Guid="a60e08e4-bad4-4d44-a462-e2fefb3fbe7f" Directory="directory_1997091039">
-                <File Id="file_0342FA22" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\System.CommandLine.dll" KeyPath="yes" />
-            </Component>
-            <Component Id="component_0266B3BC" Guid="3f780435-a2bf-4230-afed-6e49c87450fb" Directory="directory_1997091039">
-                <File Id="file_0266B3BC" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\System.Data.Odbc.dll" KeyPath="yes" />
-            </Component>
-            <Component Id="component_03372094" Guid="0418d896-0530-4ff2-8ab8-19b6f5c98cbb" Directory="directory_1997091039">
-                <File Id="file_03372094" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\System.Diagnostics.EventLog.dll" KeyPath="yes" />
-            </Component>
-            <Component Id="component_01CCA78B" Guid="46db3f48-753a-4473-bca3-12b2e27d2df3" Directory="directory_1997091039">
-                <File Id="file_01CCA78B" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\System.Diagnostics.EventLog.Messages.dll" KeyPath="yes" />
-            </Component>
-            <Component Id="component_03648210" Guid="b296b177-fe0e-45d0-a4bd-7ace37861cf5" Directory="directory_1997091039">
-                <File Id="file_03648210" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\System.Drawing.Common.dll" KeyPath="yes" />
-            </Component>
-            <Component Id="component_001A9AD8" Guid="13a2df7f-a10a-4778-9a66-119c32b5e9f7" Directory="directory_1997091039">
-                <File Id="file_001A9AD8" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\System.Management.dll" KeyPath="yes" />
-            </Component>
-            <Component Id="component_0159DCFC" Guid="d9bf4d45-22ca-40eb-b5c2-204cd9fbf6dc" Directory="directory_1997091039">
-                <File Id="file_0159DCFC" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\System.Private.Windows.Core.dll" KeyPath="yes" />
-            </Component>
-            <Component Id="component_019038D2" Guid="025b99a7-fcd3-4e7a-9f03-d293f09d4c72" Directory="directory_1997091039">
-                <File Id="file_019038D2" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\System.Private.Windows.GdiPlus.dll" KeyPath="yes" />
-            </Component>
-            <Component Id="component_0052E2AE" Guid="815c7e3e-1e40-4743-be47-00648bf76b53" Directory="directory_1997091039">
-                <File Id="file_0052E2AE" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\System.Security.Cryptography.Pkcs.dll" KeyPath="yes" />
-            </Component>
-            <Component Id="component_003582D7" Guid="fdafba10-8c01-468c-88ff-0e7801a80689" Directory="directory_1997091039">
-                <File Id="file_003582D7" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\System.Security.Cryptography.Xml.dll" KeyPath="yes" />
-            </Component>
-            <Component Id="component_02B7A4EB" Guid="5e46e5eb-b91f-477d-bdce-873e97e2847e" Directory="directory_1997091039">
-                <File Id="file_02B7A4EB" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\System.ServiceProcess.ServiceController.dll" KeyPath="yes" />
-            </Component>
-            <Component Id="component_03535FF4" Guid="66964a19-a523-477d-9da8-f7162313a278" Directory="directory_1997091039">
-                <File Id="file_03535FF4" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\es\Microsoft.CodeAnalysis.CSharp.resources.dll" KeyPath="yes" />
-            </Component>
-            <Component Id="component_033BDF6A" Guid="df3ae9b7-4c35-43c6-9e4e-0dfb5c104f7c" Directory="directory_1997091039">
-                <File Id="file_033BDF6A" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\es\Microsoft.CodeAnalysis.resources.dll" KeyPath="yes" />
-            </Component>
-            <Component Id="component_020A5868" Guid="6eceb5fc-2c57-4eab-908c-ec00ddd26365" Directory="directory_1997091039">
-                <File Id="file_020A5868" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\es\System.CommandLine.resources.dll" KeyPath="yes" />
-            </Component>
-            <Component Id="component_02867D51" Guid="239a32c8-a326-41f0-8462-509485c44e7b" Directory="directory_1997091039">
-                <File Id="file_02867D51" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\fr\Microsoft.CodeAnalysis.CSharp.resources.dll" KeyPath="yes" />
-            </Component>
-            <Component Id="component_00D45D21" Guid="bed5847d-ec84-42c9-8e71-396737815aa5" Directory="directory_1997091039">
-                <File Id="file_00D45D21" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\fr\Microsoft.CodeAnalysis.resources.dll" KeyPath="yes" />
-            </Component>
-            <Component Id="component_02C8BAB5" Guid="c4aac7b7-1858-4430-bbbe-ae0342e3c77f" Directory="directory_1997091039">
-                <File Id="file_02C8BAB5" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\fr\System.CommandLine.resources.dll" KeyPath="yes" />
-            </Component>
-            <Component Id="component_00317B3D" Guid="be659fce-b874-4230-9c30-e6b377e168c8" Directory="directory_1997091039">
-                <File Id="file_00317B3D" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\it\Microsoft.CodeAnalysis.CSharp.resources.dll" KeyPath="yes" />
-            </Component>
-            <Component Id="component_0283421E" Guid="9bafce5d-732a-4a9c-9c50-134dac8d6acb" Directory="directory_1997091039">
-                <File Id="file_0283421E" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\it\Microsoft.CodeAnalysis.resources.dll" KeyPath="yes" />
-            </Component>
-            <Component Id="component_00AA5B89" Guid="5d2a4c44-8729-471e-a96d-ebed88ec8e14" Directory="directory_1997091039">
-                <File Id="file_00AA5B89" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\it\System.CommandLine.resources.dll" KeyPath="yes" />
+            <Component Id="component_0102575C" Guid="37d9c99b-ec2f-43a0-90ae-202065b6ba2a" Directory="directory_1265916340">
+                <File Id="file_0102575C" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\LwEngineServices.dll" KeyPath="yes" />
             </Component>
         </ComponentGroup>
         <ComponentGroup Id="group_01B5828E">
-            <Component Id="component_00A6A600" Guid="4798e4ed-7a12-48e5-b283-dcca2e8d52ca">
-                <RemoveFolder Directory="directory_1814109901" On="uninstall" />
+            <Component Id="component_011E6FAC" Guid="70284298-6a1b-4249-b044-d82cd429ad6f" Directory="directory_1265916340">
+                <File Id="file_011E6FAC" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\LwEngine.Barcode.dll" KeyPath="yes" />
+            </Component>
+            <Component Id="component_028BABBC" Guid="8dc9e148-88df-4fb0-b21b-918e60246179" Directory="directory_1265916340">
+                <File Id="file_028BABBC" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\LwEngine.Batch.dll" KeyPath="yes" />
+            </Component>
+            <Component Id="component_0117B88E" Guid="ac27b28e-86c7-4d37-a20c-2cc0afc65f93" Directory="directory_1265916340">
+                <File Id="file_0117B88E" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\LwEngine.Common.dll" KeyPath="yes" />
+            </Component>
+            <Component Id="component_02345F41" Guid="d7b7f715-680c-413a-ad9b-ee602afd34e2" Directory="directory_1265916340">
+                <File Id="file_02345F41" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\LwEngine.Core.dll" KeyPath="yes" />
+            </Component>
+            <Component Id="component_00A8D64F" Guid="5dc831e3-513b-49e5-a03c-1c28fdc00fce" Directory="directory_1265916340">
+                <File Id="file_00A8D64F" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\LwEngine.Data.dll" KeyPath="yes" />
+            </Component>
+            <Component Id="component_0092E208" Guid="91f5e6d0-a5b9-4cc4-ab69-1bf22adb6686" Directory="directory_1265916340">
+                <File Id="file_0092E208" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\LwEngine.Print.dll" KeyPath="yes" />
+            </Component>
+            <Component Id="component_03757A73" Guid="8f2476c2-32ec-48d6-9c12-f6a4afe15a34" Directory="directory_1265916340">
+                <File Id="file_03757A73" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\LwEngine.Render.dll" KeyPath="yes" />
+            </Component>
+            <Component Id="component_00F737E1" Guid="a52730e6-d6cf-4637-829b-0ecd843d9876" Directory="directory_1265916340">
+                <File Id="file_00F737E1" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\LwEngine.Render.Skia.dll" KeyPath="yes" />
+            </Component>
+            <Component Id="component_008DD671" Guid="466dcd7e-a991-4669-b57a-303594540bbb" Directory="directory_1408202536">
+                <File Id="file_008DD671" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\DefaultCfg\LwEngine.config.xml" KeyPath="yes" />
+            </Component>
+            <Component Id="component_0333E3C8" Guid="8b448854-e953-4796-a026-68d6f3a8eeca" Directory="directory_1408202536">
+                <File Id="file_0333E3C8" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\DefaultCfg\LwEngine.windows.config.xml" KeyPath="yes" />
+            </Component>
+            <Component Id="component_01A2912F" Guid="fa696ebe-8c7f-4af8-85b6-ba6046010d95" Directory="directory_1408202536">
+                <File Id="file_01A2912F" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\DefaultCfg\LwEngine.printers.xml" KeyPath="yes" />
+            </Component>
+        </ComponentGroup>
+        <ComponentGroup Id="group_01B31AE9">
+            <Component Id="component_01415F6C" Guid="b6c3fda0-da93-4a8c-b27e-4f1ecd85de81" Directory="directory_1265916340">
+                <File Id="file_01415F6C" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\LwEngine.Driver.CAB.dll" KeyPath="yes" />
+            </Component>
+            <Component Id="component_0051D883" Guid="36e1c1df-5ae5-45d4-8cdb-873983617908" Directory="directory_1265916340">
+                <File Id="file_0051D883" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\LwEngine.Driver.CAB.devices.xml" KeyPath="yes" />
+            </Component>
+        </ComponentGroup>
+        <ComponentGroup Id="group_033CC455">
+            <Component Id="component_0027FEAB" Guid="909543d2-e8cc-44ac-8c3d-f8416c7d60ce" Directory="directory_1265916340">
+                <File Id="file_0027FEAB" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\LwEngine.Driver.TEC.dll" KeyPath="yes" />
+            </Component>
+            <Component Id="component_0207EEB2" Guid="6fa50a0c-d471-4984-b93c-3654ec46bda8" Directory="directory_1265916340">
+                <File Id="file_0207EEB2" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\LwEngine.Driver.TEC.devices.xml" KeyPath="yes" />
+            </Component>
+        </ComponentGroup>
+        <ComponentGroup Id="group_028881A8">
+            <Component Id="component_02671F12" Guid="74ae74f2-69f5-4fb7-8e14-a7c4bfeb3f6d" Directory="directory_1265916340">
+                <File Id="file_02671F12" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\LwEngine.Driver.PDF.dll" KeyPath="yes" />
+            </Component>
+        </ComponentGroup>
+        <ComponentGroup Id="group_001D9802">
+            <Component Id="component_033C93F3" Guid="d52f302f-d9fd-4377-a368-6cbe0c59c1cd" Directory="directory_1265916340">
+                <File Id="file_033C93F3" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\LwEngine.Driver.SVG.dll" KeyPath="yes" />
+            </Component>
+        </ComponentGroup>
+        <ComponentGroup Id="group_00330C47">
+            <Component Id="component_02138360" Guid="4374ef0a-4f94-44a3-ae94-08ce0eca9830" Directory="directory_1265916340">
+                <File Id="file_02138360" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\LwEngine.Driver.Windows.dll" KeyPath="yes" />
+            </Component>
+        </ComponentGroup>
+        <ComponentGroup Id="group_031D9C47">
+            <Component Id="component_02FDABEC" Guid="51d0a3d1-0add-4789-a59b-0798990685c0" Directory="directory_1265916340">
+                <File Id="file_02FDABEC" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\LwEngine.Driver.Sato.dll" KeyPath="yes" />
+            </Component>
+        </ComponentGroup>
+        <ComponentGroup Id="group_028C2B2E">
+            <Component Id="component_02E1BB03" Guid="b5d86fcf-86ff-4a6e-b045-bd9ec4364694" Directory="directory_1265916340">
+                <File Id="file_02E1BB03" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\LwEngine.Driver.Zebra.dll" KeyPath="yes" />
+            </Component>
+        </ComponentGroup>
+        <ComponentGroup Id="group_025DF523">
+            <Component Id="component_01767F33" Guid="7bc20066-96be-4e97-b44a-0891ca4b6cdb" Directory="directory_1265916340">
+                <File Id="file_01767F33" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\LwEngine.Data.ODBC.dll" KeyPath="yes" />
+            </Component>
+        </ComponentGroup>
+        <ComponentGroup Id="group_0006D457">
+            <Component Id="component_03047599" Guid="f9a51c1e-3c03-4b5a-80cc-25abdb32cec9" Directory="directory_1265916340">
+                <File Id="file_03047599" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\LwEngine.Data.PostgreSQL.dll" KeyPath="yes" />
+            </Component>
+        </ComponentGroup>
+        <ComponentGroup Id="group_00822E10">
+            <Component Id="component_0339F8CD" Guid="aee3e1ab-f8f9-41c9-8168-11c80a4cf3b2" Directory="directory_1265916340">
+                <File Id="file_0339F8CD" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\LwEngine.Data.SQLite.dll" KeyPath="yes" />
+            </Component>
+        </ComponentGroup>
+        <ComponentGroup Id="group_01F068C2">
+            <Component Id="component_01F1A270" Guid="aeee7ef1-9be6-412f-9cac-cccb24ec9230" Directory="directory_1265916340">
+                <File Id="file_01F1A270" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\LwEngine.Data.CSV.dll" KeyPath="yes" />
+            </Component>
+        </ComponentGroup>
+        <ComponentGroup Id="group_038959BB">
+            <Component Id="component_01453FB1" Guid="6828e04f-30c9-487b-86b0-20b740c138a7" Directory="directory_1265916340">
+                <File Id="file_01453FB1" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\LwFakeNetPrinter.exe" KeyPath="yes" />
+            </Component>
+            <Component Id="component_00843C05" Guid="4ce7faac-c01e-4598-90c4-bce52b5180d8">
+                <Shortcut Id="shortcut_02B70C45" Directory="directory_2069842067" Name="LwFakeNetPrinter" Description="Net printer emulator." Target="[ProgramFiles64Folder]\RSOpenWare\Label Writer Engine Install Test\v0.0\bin\LwFakeNetPrinter.exe" />
+                <RegistryValue Root="HKCU" Key="[ProgramFiles64Folder]\RSOpenWare\Label Writer Engine Install Test\v0.0\bin\LwNetFakePrinter.exe" Name="shortcut" Type="integer" Value="1" KeyPath="yes" />
+            </Component>
+            <Component Id="component_034B9F87" Guid="00f33b9c-e71e-4925-a472-a720267f7e79" Directory="directory_1265916340">
+                <File Id="file_034B9F87" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\LwFakeNetPrinter.dll" KeyPath="yes" />
+            </Component>
+        </ComponentGroup>
+        <ComponentGroup Id="group_01AB8032">
+            <Component Id="component_02D719DF" Guid="d7be241f-003d-4dab-9858-aa1f0e25c72b" Directory="directory_1265916340">
+                <File Id="file_02D719DF" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\DeviceId.dll" KeyPath="yes" />
+            </Component>
+            <Component Id="component_00EC5054" Guid="bcefc902-b708-4eb2-89e2-f36b7e41582d" Directory="directory_1265916340">
+                <File Id="file_00EC5054" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\DeviceId.Linux.dll" KeyPath="yes" />
+            </Component>
+            <Component Id="component_00001444" Guid="41b837ef-4fee-44ff-b2b9-036b3a6279cc" Directory="directory_1265916340">
+                <File Id="file_00001444" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\DeviceId.Mac.dll" KeyPath="yes" />
+            </Component>
+            <Component Id="component_00010779" Guid="02c292b2-bd7d-4eaa-b349-8cd9d5b36d1c" Directory="directory_1265916340">
+                <File Id="file_00010779" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\DeviceId.Windows.dll" KeyPath="yes" />
+            </Component>
+            <Component Id="component_000D612B" Guid="cf73a3ae-5936-4104-a191-466bb4f470e2" Directory="directory_1265916340">
+                <File Id="file_000D612B" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\DeviceId.Windows.Wmi.dll" KeyPath="yes" />
+            </Component>
+            <Component Id="component_00ADEF35" Guid="56f35b13-df4a-473c-8574-cf89461dae3f" Directory="directory_1265916340">
+                <File Id="file_00ADEF35" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\e_sqlite3.dll" KeyPath="yes" />
+            </Component>
+            <Component Id="component_00D525BA" Guid="98ea5747-4b47-4763-af01-a3e9566928e6" Directory="directory_1265916340">
+                <File Id="file_00D525BA" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\Google.Protobuf.dll" KeyPath="yes" />
+            </Component>
+            <Component Id="component_02D2EA76" Guid="8b909f71-ef54-47ea-abcb-84263460aff9" Directory="directory_1265916340">
+                <File Id="file_02D2EA76" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\Grpc.Core.Api.dll" KeyPath="yes" />
+            </Component>
+            <Component Id="component_00B5E806" Guid="ca40f873-a7ad-4454-b7c1-fd5ef2cfff9f" Directory="directory_1265916340">
+                <File Id="file_00B5E806" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\Grpc.Net.Client.dll" KeyPath="yes" />
+            </Component>
+            <Component Id="component_013CC85A" Guid="56fed632-2daa-4780-8dec-c18cddf56b0f" Directory="directory_1265916340">
+                <File Id="file_013CC85A" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\Grpc.Net.Common.dll" KeyPath="yes" />
+            </Component>
+            <Component Id="component_00162C97" Guid="b5fe85a5-0beb-448d-9b5a-970cd614f9b3" Directory="directory_1265916340">
+                <File Id="file_00162C97" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\Karambolo.Extensions.Logging.File.dll" KeyPath="yes" />
+            </Component>
+            <Component Id="component_012043AE" Guid="45bc0159-0a98-41b6-a558-6577dc9e0261" Directory="directory_1265916340">
+                <File Id="file_012043AE" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\libSkiaSharp.dll" KeyPath="yes" />
+            </Component>
+            <Component Id="component_02A36FE1" Guid="8853a3e6-b9a9-4d0f-9dce-7cbd63e9080c" Directory="directory_1265916340">
+                <File Id="file_02A36FE1" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\LMS3.Client.dll" KeyPath="yes" />
+            </Component>
+            <Component Id="component_024CAE72" Guid="5c2505d8-192c-47d5-8449-e4220f6051a9" Directory="directory_1265916340">
+                <File Id="file_024CAE72" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\LMS3.MachineId.dll" KeyPath="yes" />
+            </Component>
+            <Component Id="component_01E4DBCB" Guid="c4c52e38-7942-4bbf-974d-c4a5293f67b4" Directory="directory_1265916340">
+                <File Id="file_01E4DBCB" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\Microsoft.CodeAnalysis.CSharp.dll" KeyPath="yes" />
+            </Component>
+            <Component Id="component_009F2952" Guid="c9c24445-5275-4e39-b52a-77ee0af5e1d5" Directory="directory_1265916340">
+                <File Id="file_009F2952" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\Microsoft.CodeAnalysis.dll" KeyPath="yes" />
+            </Component>
+            <Component Id="component_0015192A" Guid="d29d0f6b-6aef-48cb-bb0f-a02e3d48587f" Directory="directory_1265916340">
+                <File Id="file_0015192A" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\Microsoft.Data.Sqlite.dll" KeyPath="yes" />
+            </Component>
+            <Component Id="component_0112472C" Guid="211f0211-c909-4c00-9864-b2249e591665" Directory="directory_1265916340">
+                <File Id="file_0112472C" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\Microsoft.Extensions.Configuration.Abstractions.dll" KeyPath="yes" />
+            </Component>
+            <Component Id="component_01ED9D46" Guid="f3d491c8-73e7-4704-9014-adf3bfff87f9" Directory="directory_1265916340">
+                <File Id="file_01ED9D46" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\Microsoft.Extensions.Configuration.Binder.dll" KeyPath="yes" />
+            </Component>
+            <Component Id="component_0110FC90" Guid="0b7d9852-cdb1-439e-b36f-cba93aeeee01" Directory="directory_1265916340">
+                <File Id="file_0110FC90" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\Microsoft.Extensions.Configuration.CommandLine.dll" KeyPath="yes" />
+            </Component>
+            <Component Id="component_01DCD353" Guid="791e7097-c3e3-4394-aebd-4d0ddbf484b7" Directory="directory_1265916340">
+                <File Id="file_01DCD353" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\Microsoft.Extensions.Configuration.dll" KeyPath="yes" />
+            </Component>
+            <Component Id="component_0036BB3A" Guid="8d9476c5-1623-46c6-89c9-e29065179b2e" Directory="directory_1265916340">
+                <File Id="file_0036BB3A" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\Microsoft.Extensions.Configuration.EnvironmentVariables.dll" KeyPath="yes" />
+            </Component>
+            <Component Id="component_02C781F8" Guid="5cae10c1-21bc-420e-bac7-7b8f44780b96" Directory="directory_1265916340">
+                <File Id="file_02C781F8" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\Microsoft.Extensions.Configuration.FileExtensions.dll" KeyPath="yes" />
+            </Component>
+            <Component Id="component_00219999" Guid="454e56c6-8de4-4c8c-9cd4-3d949bd262c5" Directory="directory_1265916340">
+                <File Id="file_00219999" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\Microsoft.Extensions.Configuration.Json.dll" KeyPath="yes" />
+            </Component>
+            <Component Id="component_01B4CCCA" Guid="d8527011-42fd-486f-90e3-dd6f4ffa1d7f" Directory="directory_1265916340">
+                <File Id="file_01B4CCCA" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\Microsoft.Extensions.Configuration.UserSecrets.dll" KeyPath="yes" />
+            </Component>
+            <Component Id="component_022E664B" Guid="33f7c476-94c8-40aa-8c1d-6cd7d9dddcfa" Directory="directory_1265916340">
+                <File Id="file_022E664B" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\Microsoft.Extensions.Configuration.Xml.dll" KeyPath="yes" />
+            </Component>
+            <Component Id="component_005B31D1" Guid="7cc4ee65-d7e6-4ef9-a32d-fb87551754b6" Directory="directory_1265916340">
+                <File Id="file_005B31D1" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\Microsoft.Extensions.DependencyInjection.Abstractions.dll" KeyPath="yes" />
+            </Component>
+            <Component Id="component_00A1879D" Guid="ddf623ec-0243-4790-aafa-39b5e4987e02" Directory="directory_1265916340">
+                <File Id="file_00A1879D" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\Microsoft.Extensions.DependencyInjection.dll" KeyPath="yes" />
+            </Component>
+            <Component Id="component_0033E301" Guid="a97c6cc9-14ad-420e-a12a-7ec7eaf36429" Directory="directory_1265916340">
+                <File Id="file_0033E301" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\Microsoft.Extensions.Diagnostics.Abstractions.dll" KeyPath="yes" />
+            </Component>
+            <Component Id="component_02A2870E" Guid="075b0e7d-d31d-43d3-aca9-dbde264b60d2" Directory="directory_1265916340">
+                <File Id="file_02A2870E" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\Microsoft.Extensions.Diagnostics.dll" KeyPath="yes" />
+            </Component>
+            <Component Id="component_0240DBC0" Guid="46ea223a-cb99-41ee-ac77-a7ad4dfcbd9e" Directory="directory_1265916340">
+                <File Id="file_0240DBC0" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\Microsoft.Extensions.FileProviders.Abstractions.dll" KeyPath="yes" />
+            </Component>
+            <Component Id="component_014B28CC" Guid="5ffe30c1-0df7-47f4-90e2-c8b1dc8771ab" Directory="directory_1265916340">
+                <File Id="file_014B28CC" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\Microsoft.Extensions.FileProviders.Physical.dll" KeyPath="yes" />
+            </Component>
+            <Component Id="component_00D11266" Guid="f5a59cf3-a742-4ddf-94bd-e750e3dab9d9" Directory="directory_1265916340">
+                <File Id="file_00D11266" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\Microsoft.Extensions.FileSystemGlobbing.dll" KeyPath="yes" />
+            </Component>
+            <Component Id="component_029DEF35" Guid="3fc53014-96d0-4a65-b496-6be10e22ab2d" Directory="directory_1265916340">
+                <File Id="file_029DEF35" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\Microsoft.Extensions.Hosting.Abstractions.dll" KeyPath="yes" />
+            </Component>
+            <Component Id="component_020525B7" Guid="9c2131d0-550e-4c6e-9d06-f48ecd7f7b85" Directory="directory_1265916340">
+                <File Id="file_020525B7" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\Microsoft.Extensions.Hosting.dll" KeyPath="yes" />
+            </Component>
+            <Component Id="component_0242EA57" Guid="1eabfb93-e67f-428d-bd14-0f87041b62af" Directory="directory_1265916340">
+                <File Id="file_0242EA57" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\Microsoft.Extensions.Hosting.Systemd.dll" KeyPath="yes" />
+            </Component>
+            <Component Id="component_0165E66B" Guid="69ce3aa1-0d5a-4f59-a851-193c0231a1f6" Directory="directory_1265916340">
+                <File Id="file_0165E66B" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\Microsoft.Extensions.Hosting.WindowsServices.dll" KeyPath="yes" />
+            </Component>
+            <Component Id="component_022CB36F" Guid="9d99cd83-8039-4f1d-9f9b-6baf555d9740" Directory="directory_1265916340">
+                <File Id="file_022CB36F" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\Microsoft.Extensions.Logging.Abstractions.dll" KeyPath="yes" />
+            </Component>
+            <Component Id="component_00451CA5" Guid="02ad3bed-d803-470f-9336-ba2173fea6e2" Directory="directory_1265916340">
+                <File Id="file_00451CA5" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\Microsoft.Extensions.Logging.Configuration.dll" KeyPath="yes" />
+            </Component>
+            <Component Id="component_0382746C" Guid="398fb08f-8b3e-4835-9466-a87d4236f520" Directory="directory_1265916340">
+                <File Id="file_0382746C" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\Microsoft.Extensions.Logging.Console.dll" KeyPath="yes" />
+            </Component>
+            <Component Id="component_019FE97E" Guid="8c7a3821-4872-48b3-b412-a5795d16e7f7" Directory="directory_1265916340">
+                <File Id="file_019FE97E" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\Microsoft.Extensions.Logging.Debug.dll" KeyPath="yes" />
+            </Component>
+            <Component Id="component_011EDB6B" Guid="c1cedea4-debd-40d5-a7ca-af0198e5f386" Directory="directory_1265916340">
+                <File Id="file_011EDB6B" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\Microsoft.Extensions.Logging.dll" KeyPath="yes" />
+            </Component>
+            <Component Id="component_0291247A" Guid="263a8834-6578-44b9-a877-62738e06eb0b" Directory="directory_1265916340">
+                <File Id="file_0291247A" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\Microsoft.Extensions.Logging.EventLog.dll" KeyPath="yes" />
+            </Component>
+            <Component Id="component_015EDA3C" Guid="5873d58a-088b-422b-a6bf-630294932921" Directory="directory_1265916340">
+                <File Id="file_015EDA3C" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\Microsoft.Extensions.Logging.EventSource.dll" KeyPath="yes" />
+            </Component>
+            <Component Id="component_01D11510" Guid="7e69d3f5-7657-4929-ac04-959a3736ebcf" Directory="directory_1265916340">
+                <File Id="file_01D11510" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\Microsoft.Extensions.Options.ConfigurationExtensions.dll" KeyPath="yes" />
+            </Component>
+            <Component Id="component_039E11DB" Guid="0ef07a16-486f-437f-bd72-0a99d6ff142b" Directory="directory_1265916340">
+                <File Id="file_039E11DB" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\Microsoft.Extensions.Options.DataAnnotations.dll" KeyPath="yes" />
+            </Component>
+            <Component Id="component_0306E826" Guid="e0c39103-d7c1-470e-b214-0ac9ec364028" Directory="directory_1265916340">
+                <File Id="file_0306E826" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\Microsoft.Extensions.Options.dll" KeyPath="yes" />
+            </Component>
+            <Component Id="component_0359C9F7" Guid="624a1114-1487-4b49-80e8-c330896523b4" Directory="directory_1265916340">
+                <File Id="file_0359C9F7" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\Microsoft.Extensions.Primitives.dll" KeyPath="yes" />
+            </Component>
+            <Component Id="component_038F4192" Guid="fc4a7412-e10d-42cc-9f5d-d16f7f0ee872" Directory="directory_1265916340">
+                <File Id="file_038F4192" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\Microsoft.Win32.SystemEvents.dll" KeyPath="yes" />
+            </Component>
+            <Component Id="component_0246546E" Guid="ce44586a-4249-4e36-b674-05bfa15bbcae" Directory="directory_1265916340">
+                <File Id="file_0246546E" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\NetSerializer.dll" KeyPath="yes" />
+            </Component>
+            <Component Id="component_01924999" Guid="306c8717-83b5-4910-ae83-a13fb663432a" Directory="directory_1265916340">
+                <File Id="file_01924999" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\Npgsql.dll" KeyPath="yes" />
+            </Component>
+            <Component Id="component_006DBCCD" Guid="993c500a-f328-46a1-8c70-14e5f638ecaa" Directory="directory_1265916340">
+                <File Id="file_006DBCCD" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\QRCoder.dll" KeyPath="yes" />
+            </Component>
+            <Component Id="component_01929672" Guid="5747977f-2c7c-4763-87ef-7028258c2429" Directory="directory_1265916340">
+                <File Id="file_01929672" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\SkiaSharp.dll" KeyPath="yes" />
+            </Component>
+            <Component Id="component_0071A3D3" Guid="b973f7eb-5964-4a8a-8da8-6c8599b1566a" Directory="directory_1265916340">
+                <File Id="file_0071A3D3" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\SQLitePCLRaw.batteries_v2.dll" KeyPath="yes" />
+            </Component>
+            <Component Id="component_01C551C3" Guid="2fd3b256-f82e-43d9-9ae2-33823bdf7a35" Directory="directory_1265916340">
+                <File Id="file_01C551C3" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\SQLitePCLRaw.core.dll" KeyPath="yes" />
+            </Component>
+            <Component Id="component_030526EE" Guid="82b36795-be5b-4e4d-9c2e-8aba791471fe" Directory="directory_1265916340">
+                <File Id="file_030526EE" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\SQLitePCLRaw.provider.e_sqlite3.dll" KeyPath="yes" />
+            </Component>
+            <Component Id="component_0342FA22" Guid="8bf45977-7761-44cd-9466-20c782a162d4" Directory="directory_1265916340">
+                <File Id="file_0342FA22" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\System.CodeDom.dll" KeyPath="yes" />
+            </Component>
+            <Component Id="component_0266B3BC" Guid="928da87a-4803-4630-b6b1-324973ad7f7a" Directory="directory_1265916340">
+                <File Id="file_0266B3BC" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\System.CommandLine.dll" KeyPath="yes" />
+            </Component>
+            <Component Id="component_03372094" Guid="2e5793e5-297a-438b-8b5c-1c4ae8b58fce" Directory="directory_1265916340">
+                <File Id="file_03372094" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\System.Data.Odbc.dll" KeyPath="yes" />
+            </Component>
+            <Component Id="component_01CCA78B" Guid="41cb1d8f-576f-4025-b367-1b1318245c08" Directory="directory_1265916340">
+                <File Id="file_01CCA78B" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\System.Diagnostics.EventLog.dll" KeyPath="yes" />
+            </Component>
+            <Component Id="component_03648210" Guid="e4c69221-1252-4ea6-8032-127897ce334a" Directory="directory_1265916340">
+                <File Id="file_03648210" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\System.Diagnostics.EventLog.Messages.dll" KeyPath="yes" />
+            </Component>
+            <Component Id="component_001A9AD8" Guid="02743e15-e477-406a-9742-d7e04a3ba377" Directory="directory_1265916340">
+                <File Id="file_001A9AD8" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\System.Drawing.Common.dll" KeyPath="yes" />
+            </Component>
+            <Component Id="component_0159DCFC" Guid="fe4499e9-f31b-4351-97eb-aca2e2ebde54" Directory="directory_1265916340">
+                <File Id="file_0159DCFC" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\System.Management.dll" KeyPath="yes" />
+            </Component>
+            <Component Id="component_019038D2" Guid="c7a5857e-b822-43d5-879f-fe58ef1b6537" Directory="directory_1265916340">
+                <File Id="file_019038D2" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\System.Private.Windows.Core.dll" KeyPath="yes" />
+            </Component>
+            <Component Id="component_0052E2AE" Guid="b45f77eb-1ba5-40c6-a735-d64ff4bd963b" Directory="directory_1265916340">
+                <File Id="file_0052E2AE" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\System.Private.Windows.GdiPlus.dll" KeyPath="yes" />
+            </Component>
+            <Component Id="component_003582D7" Guid="0670dae8-c7b9-406d-9093-eb43f602f187" Directory="directory_1265916340">
+                <File Id="file_003582D7" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\System.Security.Cryptography.Pkcs.dll" KeyPath="yes" />
+            </Component>
+            <Component Id="component_02B7A4EB" Guid="35494a94-0813-48bd-b128-d63dd51eebc2" Directory="directory_1265916340">
+                <File Id="file_02B7A4EB" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\System.Security.Cryptography.Xml.dll" KeyPath="yes" />
+            </Component>
+            <Component Id="component_03535FF4" Guid="c48ba58a-8d34-4464-be8e-3feb3ad0177a" Directory="directory_1265916340">
+                <File Id="file_03535FF4" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\System.ServiceProcess.ServiceController.dll" KeyPath="yes" />
+            </Component>
+            <Component Id="component_033BDF6A" Guid="4014f1ca-5981-4b83-8d17-cd8b287df6dd" Directory="directory_1300339599">
+                <File Id="file_033BDF6A" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\es\Microsoft.CodeAnalysis.CSharp.resources.dll" KeyPath="yes" />
+            </Component>
+            <Component Id="component_020A5868" Guid="4dc55205-f081-48cf-a962-bf290fd7643b" Directory="directory_1300339599">
+                <File Id="file_020A5868" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\es\Microsoft.CodeAnalysis.resources.dll" KeyPath="yes" />
+            </Component>
+            <Component Id="component_02867D51" Guid="73d21c1b-7305-4ed0-bdbf-edbf6b4bfec3" Directory="directory_1300339599">
+                <File Id="file_02867D51" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\es\System.CommandLine.resources.dll" KeyPath="yes" />
+            </Component>
+            <Component Id="component_00D45D21" Guid="6f699966-4111-476e-aae8-ea5591b0f02a" Directory="directory_1946772453">
+                <File Id="file_00D45D21" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\fr\Microsoft.CodeAnalysis.CSharp.resources.dll" KeyPath="yes" />
+            </Component>
+            <Component Id="component_02C8BAB5" Guid="bcef4f47-6a40-4055-9be9-402b38b13fe1" Directory="directory_1946772453">
+                <File Id="file_02C8BAB5" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\fr\Microsoft.CodeAnalysis.resources.dll" KeyPath="yes" />
+            </Component>
+            <Component Id="component_00317B3D" Guid="03d983df-91f7-42c9-ab19-f4a93b899bba" Directory="directory_1946772453">
+                <File Id="file_00317B3D" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\fr\System.CommandLine.resources.dll" KeyPath="yes" />
+            </Component>
+            <Component Id="component_0283421E" Guid="7f9b2209-59c9-451f-a5af-faf239ead568" Directory="directory_548901003">
+                <File Id="file_0283421E" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\it\Microsoft.CodeAnalysis.CSharp.resources.dll" KeyPath="yes" />
+            </Component>
+            <Component Id="component_00AA5B89" Guid="012357d4-93f4-47b9-b0f4-131cf33bbf04" Directory="directory_548901003">
+                <File Id="file_00AA5B89" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\it\Microsoft.CodeAnalysis.resources.dll" KeyPath="yes" />
+            </Component>
+            <Component Id="component_00A6A600" Guid="44b37904-ff6a-4f21-8982-813c0dcd20ee" Directory="directory_548901003">
+                <File Id="file_00A6A600" Source="C:\Users\Rafael\Documents\Projectes\Net\LwEngine\v5.1\Artifacts\publish\SetupWix\it\System.CommandLine.resources.dll" KeyPath="yes" />
+            </Component>
+        </ComponentGroup>
+        <ComponentGroup Id="group_0237A13C">
+            <Component Id="component_00766E05" Guid="93574b6b-520f-4139-8120-eee96f2b3997">
+                <RemoveFolder Directory="directory_2069842067" On="uninstall" />
             </Component>
         </ComponentGroup>
     </Package>
