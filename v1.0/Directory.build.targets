@@ -1,0 +1,13 @@
+<Project>           
+   
+	<!--  Copia els paquets nuget al repositori
+	-->
+	<!--<Target Name="CopyPackageToLocalRepository"
+	        AfterTargets="Pack">
+		<Copy SourceFiles="$(ArtifactsPath)\package\$(Configuration)\$(PackageId).$(PackageVersion).nupkg"
+		      DestinationFolder="$(MSBuildThisFileDirectory)\..\..\Assemblies\PrivateNuGet"
+              SkipUnchangedFiles="true"
+              Condition="Exists('$(ArtifactsPath)\package\$(Configuration)\$(PackageId).$(PackageVersion).nupkg')"/>
+	</Target>-->
+
+</Project>

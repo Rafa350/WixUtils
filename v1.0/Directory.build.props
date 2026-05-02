@@ -1,0 +1,20 @@
+<Project>
+
+	<PropertyGroup>
+		<ArtifactsPath>$(MSBuildThisFileDirectory)Artifacts</ArtifactsPath>
+	</PropertyGroup>
+    
+	<PropertyGroup>
+		<Nullable>enable</Nullable>
+	</PropertyGroup>
+    
+    <!-- Informacio del projecte
+    -->
+	<PropertyGroup>
+		<Product>WixUtils</Product>
+		<Copyright>(c) 2026 Rafael Serrano Riera [rsr.openware@gmail.com]</Copyright>
+		<Authors>Rafael Serrano Riera</Authors>
+		<Version>0.1.0</Version>
+	</PropertyGroup>
+       
+</Project>

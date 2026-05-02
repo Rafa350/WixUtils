@@ -1,0 +1,16 @@
+{
+  "profiles": {
+    "WSL": {
+      "commandName": "WSL2",
+      "distributionName": ""
+    },
+    "Help": {
+      "commandName": "Project",
+      "commandLineArgs": "--help"
+    },
+    "Normal": {
+      "commandName": "Project",
+      "commandLineArgs": "./ output.wix -d WixGenerator.deps.json -f es -f it -f fr"
+    }
+  }
+}
