@@ -1,0 +1,18 @@
+﻿<Project Sdk="WixToolset.Sdk/7.0.0">
+  <PropertyGroup>
+      <Platforms>x64</Platforms>
+      <AcceptEula>wix7</AcceptEula>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="Bitmaps\LeftBanner.bmp" />
+    <None Include="Bitmaps\TopBanner.bmp" />
+    <None Include="Bitmaps\Wellcome.bmp" />
+    <None Include="Icons\LwIcon32x32.ico" />
+    <None Include="EULA\eula.rtf" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="WixToolset.Util.wixext" Version="7.0.0" />
+    <PackageReference Include="WixToolset.UI.wixext" Version="7.0.0" />
+    <PackageReference Include="WixToolset.NetFx.wixext" Version="7.0.0" />
+  </ItemGroup>
+</Project>
