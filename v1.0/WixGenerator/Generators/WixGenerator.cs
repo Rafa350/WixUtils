@@ -1,7 +1,5 @@
-﻿using System.ComponentModel;
-using System.Globalization;
+﻿using System.Globalization;
 using System.Xml;
-using System.Xml.Linq;
 using WixGenerator.Model;
 using WixGenerator.Model.Items;
 
@@ -188,10 +186,8 @@ namespace WixGenerator.Generators {
 
             public override void Visit(WuComponentGroup group) {
 
-                var groupId = String.Format("group_{0:X8}", group.GetHashCode());
-
                 _writer.WriteStartElement("ComponentGroup");
-                _writer.WriteAttributeString("Id", groupId);
+                _writer.WriteAttributeString("Id", group.GetID());
 
                 base.Visit(group);
 
@@ -200,10 +196,8 @@ namespace WixGenerator.Generators {
 
             public override void Visit(WuComponent component) {
 
-                var componentId = String.Format("component_{0:X8}", component.GetHashCode());
-
                 _writer.WriteStartElement("Component");
-                _writer.WriteAttributeString("Id", componentId);
+                _writer.WriteAttributeString("Id", component.GetID());
                 _writer.WriteAttributeString("Guid", component.Guid.ToString());
 
                 base.Visit(component);
@@ -213,20 +207,15 @@ namespace WixGenerator.Generators {
 
             public override void Visit(WuFileComponent component) {
 
-                var componentId = String.Format("component_{0:X8}", component.GetHashCode());
-                var fileId = String.Format("file_{0:X8}", component.GetHashCode());
-
-                var fullTargetDir = component.InstallDir;
-                var lastTargetDir = fullTargetDir.Substring(fullTargetDir.LastIndexOf('\\') + 1);
-                var directoryId = $"directory_{Math.Abs(HashCode.Combine(fullTargetDir, lastTargetDir))}";
+                var directoryId = String.Format("directory_{0:X8}", component.InstallDir.GetHashCode());
 
                 _writer.WriteStartElement("Component");
-                _writer.WriteAttributeString("Id", componentId);
+                _writer.WriteAttributeString("Id", component.GetID());
                 _writer.WriteAttributeString("Guid", component.Guid.ToString());
                 _writer.WriteAttributeString("Directory", directoryId);
 
                 _writer.WriteStartElement("File");
-                _writer.WriteAttributeString("Id", fileId);
+                _writer.WriteAttributeString("Id", component.GetID());
                 _writer.WriteAttributeString("Source", Path.Combine(component.SourceDir, component.Name));
                 _writer.WriteAttributeString("KeyPath", "yes");
                 _writer.WriteEndElement();
@@ -238,20 +227,15 @@ namespace WixGenerator.Generators {
 
             public override void Visit(WuExecutableFileComponent component) {
 
-                var componentId = String.Format("component_{0:X8}", component.GetHashCode());
-                var fileId = String.Format("file_{0:X8}", component.GetHashCode());
-
-                var fullTargetDir = component.InstallDir;
-                var lastTargetDir = fullTargetDir.Substring(fullTargetDir.LastIndexOf('\\') + 1);
-                var directoryId = $"directory_{Math.Abs(HashCode.Combine(fullTargetDir, lastTargetDir))}";
+                var directoryId = String.Format("directory_{0:X8}", component.InstallDir.GetHashCode());
 
                 _writer.WriteStartElement("Component");
-                _writer.WriteAttributeString("Id", componentId);
+                _writer.WriteAttributeString("Id", component.GetID());
                 _writer.WriteAttributeString("Guid", component.Guid.ToString());
                 _writer.WriteAttributeString("Directory", directoryId);
 
                 _writer.WriteStartElement("File");
-                _writer.WriteAttributeString("Id", fileId);
+                _writer.WriteAttributeString("Id", component.GetID());
                 _writer.WriteAttributeString("Source", Path.Combine(component.SourceDir, component.Name));
                 _writer.WriteAttributeString("KeyPath", "yes");
                 _writer.WriteEndElement();
@@ -263,14 +247,10 @@ namespace WixGenerator.Generators {
 
             public override void Visit(WuFileShortcut shortcut) {
 
-                var shortcutId = String.Format("shortcut_{0:X8}", shortcut.GetHashCode());
-
-                var fulltDir = shortcut.InstallDir;
-                var lastDir = fulltDir.Substring(fulltDir.LastIndexOf('\\') + 1);
-                var directoryId = $"directory_{Math.Abs(HashCode.Combine(fulltDir, lastDir))}";
+                var directoryId = String.Format("directory_{0:X8}", shortcut.InstallDir.GetHashCode());
 
                 _writer.WriteStartElement("Shortcut");
-                _writer.WriteAttributeString("Id", shortcutId);
+                _writer.WriteAttributeString("Id", shortcut.GetID());
                 _writer.WriteAttributeString("Directory", directoryId);
                 _writer.WriteAttributeString("Name", shortcut.Title);
                 _writer.WriteAttributeString("Description", shortcut.Description);
@@ -292,9 +272,7 @@ namespace WixGenerator.Generators {
 
             public override void Visit(WuRemoveFolder entity) {
 
-                var fulltDir = entity.Directory;
-                var lastDir = fulltDir.Substring(fulltDir.LastIndexOf('\\') + 1);
-                var directoryId = $"directory_{Math.Abs(HashCode.Combine(fulltDir, lastDir))}";
+                var directoryId = String.Format("directory_{0:X8}", entity.Directory.GetHashCode());
 
                 var performOn = entity.PerformOn switch {
                     WuRemoveFolder.PerformOnValue.Install => "install",
@@ -374,6 +352,10 @@ namespace WixGenerator.Generators {
             }
         }
 
+        /// <summary>
+        /// Visita el projecte i genera les entrades corresponents
+        /// </summary>
+        /// 
         private sealed class GenerateFeaturesVisitor: WuVisitor {
 
             private readonly XmlWriter _writer;
@@ -385,8 +367,6 @@ namespace WixGenerator.Generators {
 
             public override void Visit(WuFeature feature) {
 
-                var featureId = String.Format("feature_{0:X8}", feature.GetHashCode());
-
                 var visibility = feature.Visibility switch {
                     WuFeature.VisibilityValue.Expanded => "expand",
                     WuFeature.VisibilityValue.Collapsed => "collapse",
@@ -394,19 +374,17 @@ namespace WixGenerator.Generators {
                 };
 
                 _writer.WriteStartElement("Feature");
-                _writer.WriteAttributeString("Id", featureId);
+                _writer.WriteAttributeString("Id", feature.GetID());
                 _writer.WriteAttributeString("Title", feature.Title);
                 _writer.WriteAttributeString("Description", feature.Description);
                 _writer.WriteAttributeString("Display", visibility);
                 if (feature.Visibility == WuFeature.VisibilityValue.Hidden)
                     _writer.WriteAttributeString("AllowAbsent", "no");
 
-                foreach (var g in feature.Groups) {
-
-                    var groupId = String.Format("group_{0:X8}", g.GetHashCode());
+                foreach (var group in feature.Groups) {
 
                     _writer.WriteStartElement("ComponentGroupRef");
-                    _writer.WriteAttributeString("Id", groupId);
+                    _writer.WriteAttributeString("Id", group.GetID());
                     _writer.WriteEndElement();
                 }
 
@@ -438,13 +416,17 @@ namespace WixGenerator.Generators {
 
                     var name = node.Name;
 
-                    if (name.StartsWith('[') && name.EndsWith(']')) {
+                    if (String.IsNullOrEmpty(path))
                         path = name;
+                    else
+                        path = String.Concat(path, "\\", name);
+
+                    _writer.WriteComment(path);
+                    if (name.StartsWith('[') && name.EndsWith(']')) {
                         _writer.WriteStartElement("StandardDirectory");
                         _writer.WriteAttributeString("Id", name.Substring(1, name.Length - 2));
                     }
                     else {
-                        path = String.Concat(path, "\\", name);
                         _writer.WriteStartElement("Directory");
                         _writer.WriteAttributeString("Id", String.Format("directory_{0:X8}", path.GetHashCode()));
                         _writer.WriteAttributeString("Name", name);
@@ -456,12 +438,13 @@ namespace WixGenerator.Generators {
                     _writer.WriteEndElement();
                 }
 
-                // Construeix la llista de directoris del projecte
+                // Construeix l'arbre de directoris del projecte visitant totes les extitats i
+                // obtenint les referencias a directoris d'instalacio.
                 //
                 foreach (var group in project.Entities)
                     group.AcceptVisitor(this);
 
-                // Genera les entrades  corresponents
+                // Genera les entrades corresponents
                 //
                 foreach (var subdirectory in _directoryTreeBuilder.Root.Subdirectories)
                     ProcessDirectoryNode(subdirectory, String.Empty);
