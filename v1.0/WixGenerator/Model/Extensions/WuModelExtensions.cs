@@ -70,9 +70,9 @@
                 return group;
             }
 
-            public WuComponentGroup AddExecutableFileComponent(string name, string sourceDir, string installDir, Action<WuExecutableFileComponent>? action = null) {
+            public WuComponentGroup AddExecutableFileComponent(string name, string sourceDir, string installDir, Action<WuAppFileComponent>? action = null) {
 
-                var entity = new WuExecutableFileComponent(name, sourceDir, installDir);
+                var entity = new WuAppFileComponent(name, sourceDir, installDir);
                 action?.Invoke(entity);
                 group.Add(entity);
 

@@ -23,6 +23,5 @@
         public string Name => _name;
         public string SourceDir => _sourceDir;
         public string InstallDir => _installDir;
-        public WuFileShortcut? Shortcut { get; set; }
     }
 }

@@ -1,6 +1,5 @@
 ﻿//using System.CommandLine;
 using System.Text.RegularExpressions;
-using WixGenerator.Generators;
 using WixGenerator.Model;
 using WixGenerator.Model.Extensions;
 using WixGenerator.Model.Items;
@@ -12,7 +11,7 @@ namespace WixGenerator {
         static void Main(string[] args) {
 
             string productName = "Label Writer Engine Install Test";
-            string productVersion = "0.0";
+            string productVersion = "0.1";
             string manufacturerName = "RSOpenWare";
             //string productCode = "{1F79B0D5-4820-49E6-9F88-C12CD3FB7479}";
             //string productUpgradeCode = "{3494AC38-ED10-44D5-A7D3-A2A2A3740965}";
@@ -25,7 +24,7 @@ namespace WixGenerator {
             // Crea el projecte
             //
             var project = new WuProject();
-            project.Name = "Label Writer Studio";
+            project.Name = productName;
             project.ProductCode = new Guid(productCode);
             project.UpgradeCode = new Guid(productUpgradeCode);
             project.IconFile = @"Icons\LwIcon32x32.ico";
@@ -49,7 +48,7 @@ namespace WixGenerator {
             var appDataDir = $"[CommonAppDataFolder]\\{manufacturerName}\\{productName}\\v{productVersion}";
             var installBinDir = $"[ProgramFiles64Folder]\\{manufacturerName}\\{productName}\\v{productVersion}\\bin";
             var installBinEsDir = $"[ProgramFiles64Folder]\\{manufacturerName}\\{productName}\\v{productVersion}\\bin\\es";
-            var sharedDir = $"[CommonFiles64Folder]\\{manufacturerName}\\{productName}\\v{productVersion}";
+            var sharedDir = $"[CommonFiles64Folder]\\{manufacturerName}\\{productName}";
             var shortcutsDir = $"[ProgramMenuFolder]\\{productName}";
 
             // Declara les propietats
@@ -87,7 +86,8 @@ namespace WixGenerator {
                             component
                                 .Add(new WuFileShortcut {
                                     InstallDir = shortcutsDir,
-                                    Target = $"{installBinDir}\\LwEngineTool.exe",
+                                    TargetDir = installBinDir,
+                                    TargetName = "LwEngineTool.exe",
                                     Title = "LwEngineTool",
                                     Description = "LwEngine CLI management tool"
                                 })
@@ -95,8 +95,10 @@ namespace WixGenerator {
                                     Path = $"{installBinDir}\\LwEngineTool.exe"
                                 });
                         })
-                        .AddFileComponent("LwEngineTool.dll", binSource, installBinDir);
+                        .AddFileComponent("LwEngineTool.dll", binSource, installBinDir)
+                        .AddFileComponent("LwEngineTool.runtimeconfig.json", binSource, installBinDir);
                 })
+
                 .AddComponentGroup("LwEngineServices", group => {
                     group
                         .AddExecutableFileComponent("LwEngineServices.exe", binSource, installBinDir, component => {
@@ -110,8 +112,10 @@ namespace WixGenerator {
                                     Name = "LwEngineServices"
                                 });
                         })
-                        .AddFileComponent("LwEngineServices.dll", binSource, installBinDir);
+                        .AddFileComponent("LwEngineServices.dll", binSource, installBinDir)
+                        .AddFileComponent("LwEngineServices.runtimeconfig.json", binSource, installBinDir);
                 })
+
                 .AddComponentGroup("LwEngineCore", group => {
                     group
                         .AddFileComponent("LwEngine.Barcode.dll", binSource, installBinDir)
@@ -126,52 +130,64 @@ namespace WixGenerator {
                         .AddFileComponent("LwEngine.windows.config.xml", configSource, sharedDir)
                         .AddFileComponent("LwEngine.printers.xml", configSource, sharedDir);
                 })
+
                 .AddComponentGroup("LwEngineDriver_CAB", group => {
                     group
                         .AddFileComponent("LwEngine.Driver.CAB.dll", binSource, installBinDir)
                         .AddFileComponent("LwEngine.Driver.CAB.devices.xml", binSource, installBinDir);
                 })
+
                 .AddComponentGroup("LwEngineDriver_TEC", group => {
                     group
                         .AddFileComponent("LwEngine.Driver.TEC.dll", binSource, installBinDir)
                         .AddFileComponent("LwEngine.Driver.TEC.devices.xml", binSource, installBinDir);
                 })
+
                 .AddComponentGroup("LwEngineDriver_PDF", group => {
                     group
                         .AddFileComponent("LwEngine.Driver.PDF.dll", binSource, installBinDir);
                 })
+
                 .AddComponentGroup("LwEngineDriver_SVG", group => {
                     group
                         .AddFileComponent("LwEngine.Driver.SVG.dll", binSource, installBinDir);
                 })
+
                 .AddComponentGroup("LwEngineDriver_Windows", group => {
                     group
                         .AddFileComponent("LwEngine.Driver.Windows.dll", binSource, installBinDir);
                 })
+
                 .AddComponentGroup("LwEngineDriver_Sato", group => {
                     group
                         .AddFileComponent("LwEngine.Driver.Sato.dll", binSource, installBinDir);
                 })
+
                 .AddComponentGroup("LwEngineDriver_Zebra", group => {
                     group
                         .AddFileComponent("LwEngine.Driver.Zebra.dll", binSource, installBinDir);
                 })
+
                 .AddComponentGroup("LwEngineData_ODBC", group => {
                     group
                         .AddFileComponent("LwEngine.Data.ODBC.dll", binSource, installBinDir);
                 })
+
                 .AddComponentGroup("LwEngineData_PostgreSQL", group => {
                     group
                         .AddFileComponent("LwEngine.Data.PostgreSQL.dll", binSource, installBinDir);
                 })
+
                 .AddComponentGroup("LwEngineData_SQLite", group => {
                     group
                         .AddFileComponent("LwEngine.Data.SQLite.dll", binSource, installBinDir);
                 })
+
                 .AddComponentGroup("LwEngineData_CSV", group => {
                     group
                         .AddFileComponent("LwEngine.Data.CSV.dll", binSource, installBinDir);
                 })
+
                 .AddComponentGroup("LwFakeNetPrinter", group => {
                     group
                         .AddExecutableFileComponent("LwFakeNetPrinter.exe", binSource, installBinDir)
@@ -179,7 +195,8 @@ namespace WixGenerator {
                             component
                                 .Add(new WuFileShortcut {
                                     InstallDir = shortcutsDir,
-                                    Target = $"{installBinDir}\\LwFakeNetPrinter.exe",
+                                    TargetDir = installBinDir,
+                                    TargetName = "LwFakeNetPrinter.exe",
                                     Title = "LwFakeNetPrinter",
                                     Description = "Net printer emulator."
                                 })
@@ -189,6 +206,7 @@ namespace WixGenerator {
                         })
                         .AddFileComponent("LwFakeNetPrinter.dll", binSource, installBinDir);
                 })
+
                 .AddComponentGroup("BaseComponents", group => {
 
                     var files = Directory.GetFiles(binSource, "*.dll", SearchOption.AllDirectories);
@@ -206,6 +224,7 @@ namespace WixGenerator {
                     }
                     fileNames.Clear();
                 })
+
                 .AddComponentGroup("Cleanup", group => {
                     group.AddComponent(component => {
                         component.Add(new WuRemoveFolder {
@@ -224,12 +243,15 @@ namespace WixGenerator {
                     feature.Add(project.FindGroup("LwEngineCore"));
                     feature.Add(project.FindGroup("Cleanup"));
                 })
+
                 .AddFeature("Tools", "Print and configuration CLI tool.", feature => {
                     feature.Add(project.FindGroup("LwEngineTool"));
                 })
+
                 .AddFeature("Services", "Print services.", feature => {
                     feature.Add(project.FindGroup("LwEngineServices"));
                 })
+
                 .AddFeature("Data access", "Data access drivers.", feature => {
                     feature
                         .AddFeature("ODBC", "ODBC data access driver", feature => {
@@ -245,6 +267,7 @@ namespace WixGenerator {
                             feature.Add(project.FindGroup("LwEngineData_CSV"));
                         });
                 })
+
                 .AddFeature("Printer drivers", "Printer machine drivers.", feature => {
                     feature
                         .AddFeature("Windows", "Windows printer driver", feature => {
@@ -269,12 +292,13 @@ namespace WixGenerator {
                             feature.Add(project.FindGroup("LwEngineDriver_SVG"));
                         });
                 })
+
                 .AddFeature("Test and debug tools", "Test and debug tools.", feature => {
                     feature
                         .Add(project.FindGroup("LwFakeNetPrinter"));
                 });
 
-            var generator = new Generators.WixGenerator();
+            var generator = new Generators.Wix.WixGenerator();
             generator.Generate(project, @"c:\Users\Rafael\Documents\Projectes\Net\WixUtils\v1.0\SetupProjectDemo\Product.wxs");
 
             /*var rootArgument = new Argument<string>("root");

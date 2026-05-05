@@ -1,6 +1,6 @@
 ﻿namespace WixGenerator.Model {
 
-    public sealed class WuComponentGroup: WuCompositeEntity, IWuChildOf<WuProject>, IWuChildOf<WuComponentGroup> {
+    public sealed class WuComponentGroup: WuCompositeEntity, IWuChildOf<WuProject>, IWuChildOf<WuComponentGroup>, IWuChildOf<WuFeature> {
 
         private readonly string _name;
 

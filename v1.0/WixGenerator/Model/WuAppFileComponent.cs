@@ -1,8 +1,8 @@
 ﻿namespace WixGenerator.Model {
 
-    public sealed class WuExecutableFileComponent: WuFileComponent {
+    public sealed class WuAppFileComponent: WuFileComponent {
 
-        public WuExecutableFileComponent(string name, string sourceDir, string targetDir) :
+        public WuAppFileComponent(string name, string sourceDir, string targetDir) :
             base(name, sourceDir, targetDir) {
         }
 

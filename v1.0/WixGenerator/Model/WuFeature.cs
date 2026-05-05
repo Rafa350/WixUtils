@@ -1,6 +1,6 @@
 ﻿namespace WixGenerator.Model {
 
-    public sealed class WuFeature: WuCompositeEntity, IWuChildOf<WuProject> {
+    public sealed class WuFeature: WuCompositeEntity, IWuChildOf<WuProject>, IWuChildOf<WuFeature> {
 
         public enum VisibilityValue {
             Collapsed,
@@ -24,15 +24,9 @@
         public override void AcceptVisitor(WuVisitor visitor) =>
             visitor.Visit(this);
 
-        public WuFeature Add(WuFeature feature) {
+        public WuFeature Add<T>(T entity) where T: IWuChildOf<WuFeature> {
 
-            AddEntity(feature);
-            return this;
-        }
-
-        public WuFeature Add(WuComponentGroup group) {
-
-            AddEntity(group);
+            AddEntity(entity);
             return this;
         }
 

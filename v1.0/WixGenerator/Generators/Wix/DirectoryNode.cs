@@ -1,4 +1,4 @@
-﻿namespace WixGenerator.Generators {
+﻿namespace WixGenerator.Generators.Wix {
 
     internal sealed class DirectoryNode {
 

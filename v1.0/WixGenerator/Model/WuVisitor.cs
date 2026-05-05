@@ -25,6 +25,18 @@ namespace WixGenerator.Model {
 
         }
 
+        public virtual void Visit(WuSpecialFolder folder) {
+
+            foreach (var entity in folder.Entities)
+                entity.AcceptVisitor(this);
+        }
+
+        public virtual void Visit(WuFolder folder) {
+
+            foreach (var entity in folder.Entities)
+                entity.AcceptVisitor(this);
+        }
+
         public virtual void Visit(WuFeature feature) {
 
             foreach (var f in feature.Features)
@@ -53,7 +65,7 @@ namespace WixGenerator.Model {
             VisitComponent(component);
         }
 
-        public virtual void Visit(WuExecutableFileComponent component) {
+        public virtual void Visit(WuAppFileComponent component) {
 
             VisitComponent(component);
         }
